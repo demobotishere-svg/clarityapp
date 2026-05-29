@@ -1,0 +1,206 @@
+"use client";
+
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, Check, Lock, ShieldCheck, Zap, Clock, Rocket, BrainCircuit } from "lucide-react";
+import { toast } from "sonner";
+
+export default function LeadForm({ 
+  variant = "primary", 
+  testIdSuffix = "1",
+  preTitle = "15 MINUTES TO PARADIGM SHIFT",
+  title = "15 minutes of pure AI gyan.",
+  titleHighlight = "Transform your career.",
+  description = "The 15-minute architectural preview video and the AI-Native Design Blueprint — delivered straight to your WhatsApp instantly.",
+  features = [
+    "15-minute tactical breakdown",
+    "100% practical workflows",
+    "Instant WhatsApp access"
+  ],
+  buttonText = "Send me the 15-min blueprint",
+  layout = "standard" // standard, centered, split-reverse
+}) {
+  const [name, setName] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [done, setDone] = useState(false);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (!name.trim() || !whatsapp.trim()) {
+      toast.error("Please share your name and WhatsApp number");
+      return;
+    }
+    setSubmitting(true);
+    setTimeout(() => {
+      setSubmitting(false);
+      setDone(true);
+      toast.success("System unlocked. Check WhatsApp in a few seconds.");
+    }, 900);
+  };
+
+  const isDark = variant === "secondary";
+
+  // Different animations based on layout
+  const textAnimation = 
+    layout === "centered" ? { initial: { opacity: 0, y: 40 }, whileInView: { opacity: 1, y: 0 } } :
+    layout === "split-reverse" ? { initial: { opacity: 0, x: 40 }, whileInView: { opacity: 1, x: 0 } } :
+    { initial: { opacity: 0, x: -40 }, whileInView: { opacity: 1, x: 0 } };
+
+  const formAnimation = 
+    layout === "centered" ? { initial: { opacity: 0, scale: 0.95 }, whileInView: { opacity: 1, scale: 1 } } :
+    layout === "split-reverse" ? { initial: { opacity: 0, x: -40 }, whileInView: { opacity: 1, x: 0 } } :
+    { initial: { opacity: 0, x: 40 }, whileInView: { opacity: 1, x: 0 } };
+
+  return (
+    <div
+      data-testid={`lead-form-${testIdSuffix}`}
+      className={`py-20 md:py-28 overflow-hidden ${
+        isDark ? "bg-transparent text-[#F4F4F0]" : "bg-[#F4F4F0] text-[#111111]"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        
+        {layout === "centered" ? (
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+            <motion.div {...textAnimation} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
+              <div className={`inline-block font-mono text-[10px] uppercase tracking-[0.25em] px-3 py-1 rounded-full mb-6 ${isDark ? "bg-white/5 border border-white/10 text-white/90" : "bg-[#E63946]/10 text-[#E63946]"}`}>
+                {preTitle}
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
+                {title}{" "}
+                <span className={isDark ? "italic text-white/80" : "italic text-[#666666]"}>
+                  {titleHighlight}
+                </span>
+              </h2>
+              <p className={`mt-5 text-base md:text-lg leading-relaxed mx-auto max-w-xl ${isDark ? "text-[#F4F4F0]/70" : "text-[#666666]"}`}>
+                {description}
+              </p>
+            </motion.div>
+            
+            <motion.div {...formAnimation} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }} className="w-full max-w-md mt-12">
+              <FormBox done={done} onSubmit={onSubmit} name={name} setName={setName} whatsapp={whatsapp} setWhatsapp={setWhatsapp} submitting={submitting} isDark={isDark} buttonText={buttonText} />
+            </motion.div>
+          </div>
+        ) : (
+          <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center ${layout === "split-reverse" ? "lg:flex-row-reverse" : ""}`}>
+            
+            <motion.div 
+              {...textAnimation} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className={`lg:col-span-7 ${layout === "split-reverse" ? "lg:order-2" : ""}`}
+            >
+              <div className={`font-mono text-xs uppercase tracking-[0.25em] ${isDark ? "text-[#E63946]" : "text-[#E63946]"}`}>
+                {preTitle}
+              </div>
+              <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
+                {title}{" "}
+                <span className={isDark ? "italic text-[#F4F4F0]/60" : "italic text-[#666666]"}>
+                  {titleHighlight}
+                </span>
+              </h2>
+              <p className={`mt-5 max-w-xl text-base md:text-lg leading-relaxed ${isDark ? "text-[#F4F4F0]/70" : "text-[#666666]"}`}>
+                {description}
+              </p>
+              <ul className="mt-8 flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-4">
+                {features.map((t) => (
+                  <li key={t} className={`flex items-center gap-2.5 text-sm font-medium ${isDark ? "text-[#F4F4F0]/80" : "text-[#111111]/80"}`}>
+                    <div className={isDark ? "text-[#E63946]" : "text-[#E63946]"}><Check className="w-4 h-4" /></div>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div 
+              {...formAnimation} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className={`lg:col-span-5 ${layout === "split-reverse" ? "lg:order-1" : ""}`}
+            >
+              <FormBox done={done} onSubmit={onSubmit} name={name} setName={setName} whatsapp={whatsapp} setWhatsapp={setWhatsapp} submitting={submitting} isDark={isDark} buttonText={buttonText} />
+            </motion.div>
+
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitting, isDark, buttonText }) {
+  return (
+    <AnimatePresence mode="wait">
+      {!done ? (
+        <motion.form
+          key="form"
+          onSubmit={onSubmit}
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          className={`relative rounded-3xl p-6 md:p-8 border shadow-xl ${
+            isDark
+              ? "bg-[#0a0a0a]/80 backdrop-blur-xl border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)]"
+              : "bg-white border-[#DCDCCF] ring-glow"
+          }`}
+        >
+          <div className="space-y-4">
+            <div>
+              <input
+                type="text"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name"
+                className={`w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#E63946]/50 transition-all ${
+                  isDark
+                    ? "bg-white/5 border-white/10 text-white placeholder-white/40 focus:border-white/20"
+                    : "bg-black/5 border-black/10 text-black placeholder-black/20"
+                }`}
+              />
+            </div>
+            <div>
+              <input
+                type="tel"
+                required
+                value={whatsapp}
+                onChange={(e) => setWhatsapp(e.target.value)}
+                placeholder="WhatsApp Number"
+                className={`w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#E63946]/50 transition-all ${
+                  isDark
+                    ? "bg-white/5 border-white/10 text-white placeholder-white/40 focus:border-white/20"
+                    : "bg-black/5 border-black/10 text-black placeholder-black/20"
+                }`}
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={submitting}
+              className={`w-full group relative flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-medium text-white transition-all overflow-hidden ${
+                submitting ? "bg-gray-500 cursor-not-allowed" : "bg-[#E63946] hover:bg-[#d63541]"
+              }`}
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                {submitting ? "Unlocking..." : buttonText}
+                {!submitting && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+              </span>
+            </button>
+          </div>
+        </motion.form>
+      ) : (
+        <motion.div
+          key="success"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className={`rounded-3xl p-8 md:p-12 text-center border ${
+            isDark ? "bg-[#1a1a1a] border-white/10" : "bg-white border-[#DCDCCF]"
+          }`}
+        >
+          <div className="w-16 h-16 bg-[#E63946]/10 text-[#E63946] rounded-full flex items-center justify-center mx-auto mb-6">
+            <Check className="w-8 h-8" />
+          </div>
+          <h3 className="font-serif text-2xl mb-2">Blueprint Unlocked</h3>
+          <p className={isDark ? "text-white/60" : "text-black/60"}>
+            Your 15-minute system preview has been sent to your WhatsApp.
+          </p>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
