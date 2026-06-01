@@ -81,7 +81,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-[#F4F4F0]/95 backdrop-blur-2xl flex flex-col pt-20 px-8 pb-10 md:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-[#F4F4F0] md:bg-[#F4F4F0]/95 md:backdrop-blur-2xl flex flex-col pt-20 px-8 pb-10 md:hidden overflow-y-auto"
             onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
           >
             <motion.nav

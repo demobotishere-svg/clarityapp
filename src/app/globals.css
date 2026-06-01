@@ -98,6 +98,8 @@ html, body {
 }
 .marquee-track {
     animation: marquee 50s linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
 }
 .marquee-pause:hover .marquee-track {
     animation-play-state: paused;
@@ -209,6 +211,12 @@ button:focus {
     z-index: 1;
     will-change: transform;
     transition: background 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .mouse-spotlight {
+        display: none !important;
+    }
 }
 
 /* Button light sweep effect for premium reflective shine */

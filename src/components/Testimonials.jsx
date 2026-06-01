@@ -16,8 +16,8 @@ const AVATARS = {
 
 function SeedoraMockup() {
   return (
-    <div className="w-full h-full flex items-center justify-center p-6">
-      <div className="w-64 h-[280px] bg-white rounded-[2rem] border-4 border-gray-800 shadow-2xl overflow-hidden flex flex-col font-sans relative">
+    <div className="w-full h-full flex items-center justify-center p-3 md:p-4 md:p-6">
+      <div className="w-full max-w-[16rem] min-h-[280px] bg-white rounded-[2rem] border-4 border-gray-800 shadow-2xl overflow-hidden flex flex-col font-sans relative">
         <div className="bg-green-600 text-white p-4 pb-2">
           <div className="font-bold text-lg">Seedora 🌱</div>
           <div className="text-xs opacity-80">Community Garden</div>
@@ -26,7 +26,7 @@ function SeedoraMockup() {
           <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100">
             <div className="flex justify-between items-center mb-2">
               <div className="font-semibold text-gray-800 text-sm">Monstera Update</div>
-              <div className="text-[10px] text-gray-400">2h ago</div>
+              <div className="text-[11px] text-gray-500 font-medium">2h ago</div>
             </div>
             <div className="w-full h-20 bg-green-100 rounded-lg mb-2 flex items-center justify-center overflow-hidden">
                {/* Minimal abstract representation of a photo */}
@@ -47,13 +47,13 @@ function SeedoraMockup() {
 
 function IpposalesMockup() {
   return (
-    <div className="w-full h-full flex items-center justify-center p-6">
-      <div className="w-full max-w-sm h-[260px] bg-[#1a1a1a] rounded-xl border border-white/10 shadow-2xl flex flex-col font-sans overflow-hidden">
+    <div className="w-full h-full flex items-center justify-center p-4 md:p-6">
+      <div className="w-full max-w-sm min-h-[260px] bg-[#1a1a1a] rounded-xl border border-white/10 shadow-2xl flex flex-col font-sans overflow-hidden">
         <div className="p-3 border-b border-white/10 flex items-center gap-3 bg-[#222]">
           <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs">IP</div>
           <div>
             <div className="text-sm font-semibold text-white">Ipposales Agent</div>
-            <div className="text-[10px] text-green-400 flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-green-400" /> Online</div>
+            <div className="text-xs text-green-400 font-medium flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)]" /> Online</div>
           </div>
         </div>
         <div className="flex-1 p-4 flex flex-col gap-3">
@@ -78,20 +78,20 @@ function IpposalesMockup() {
 
 function HRMockup() {
   return (
-    <div className="w-full h-full flex items-center justify-center p-6">
-      <div className="w-full h-[260px] bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden font-sans border border-gray-200 flex flex-col">
+    <div className="w-full h-full flex items-center justify-center p-4 md:p-6">
+      <div className="w-full min-h-[260px] bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden font-sans border border-gray-200 flex flex-col">
         <div className="p-3 border-b border-gray-100 flex justify-between items-center bg-gray-50/80">
            <div className="flex gap-1.5">
              <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
              <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
              <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
            </div>
-           <div className="font-medium text-gray-500 text-[10px]">app.hrportal.com</div>
+           <div className="font-medium text-gray-500 text-xs">app.hrportal.com</div>
            <div className="w-10"></div>
         </div>
         <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-white">
            <div className="font-semibold text-gray-800 text-sm">Onboarding Portal</div>
-           <div className="bg-indigo-600 text-white text-[10px] px-2 py-1 rounded font-medium shadow-sm hover:bg-indigo-700 cursor-pointer">+ Add Hire</div>
+           <div className="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md font-medium shadow-sm hover:bg-indigo-700 cursor-pointer">+ Add Hire</div>
         </div>
         <div className="p-4 flex-1">
           <table className="w-full text-left text-xs text-gray-600">
@@ -114,7 +114,7 @@ function HRMockup() {
                        {h.name}
                     </td>
                     <td className="w-1/3">{h.role}</td>
-                    <td className="w-1/3"><span className={`px-2 py-0.5 rounded-full text-[10px] ${h.color}`}>{h.status}</span></td>
+                    <td className="w-1/3"><span className={`px-2 py-0.5 rounded-full text-xs ${h.color}`}>{h.status}</span></td>
                  </tr>
                ))}
             </tbody>
@@ -127,16 +127,16 @@ function HRMockup() {
 
 function GymMockup() {
   return (
-    <div className="w-full h-full flex items-center justify-center p-6">
-       <div className="w-full h-[260px] bg-[#121212] rounded-xl border border-white/10 shadow-2xl p-4 font-sans flex flex-col gap-4">
+    <div className="w-full h-full flex items-center justify-center p-4 md:p-6">
+       <div className="w-full min-h-[260px] bg-[#121212] rounded-xl border border-white/10 shadow-2xl p-4 font-sans flex flex-col gap-4">
           <div className="flex justify-between items-start">
              <div>
-               <div className="text-white/50 text-[10px] uppercase tracking-wider mb-1">New Leads (IG)</div>
-               <div className="text-white text-3xl font-light">142</div>
+               <div className="text-white/60 text-[11px] font-medium uppercase tracking-wider mb-1">New Leads (IG)</div>
+               <div className="text-2xl font-bold text-white">24</div>
              </div>
-             <div className="bg-green-500/10 text-green-400 text-xs px-2 py-1 rounded-full border border-green-500/20">+12% vs last week</div>
+             <div className="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded border border-green-500/30">+12%</div>
           </div>
-          <div className="flex-1 flex items-end gap-1.5 h-16 mt-2">
+          <div className="w-full h-[80px] flex items-end gap-1.5 mt-2">
              {[20, 35, 25, 45, 60, 55, 80, 40, 95, 65, 100].map((h, i) => (
                <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, backgroundColor: i > 8 ? '#E63946' : 'rgba(255,255,255,0.1)' }} />
              ))}
@@ -158,8 +158,8 @@ function GymMockup() {
 
 function FinanceMockup() {
   return (
-    <div className="w-full h-full flex items-center justify-center p-6">
-      <div className="w-full h-[260px] bg-white rounded-xl shadow-2xl overflow-hidden font-sans border border-gray-200 flex flex-col">
+    <div className="w-full h-full flex items-center justify-center p-4 md:p-6">
+      <div className="w-full min-h-[260px] bg-white rounded-xl shadow-2xl overflow-hidden font-sans border border-gray-200 flex flex-col">
         <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
            <div className="font-semibold text-gray-800 text-sm">Automated Invoicing</div>
            <div className="text-green-600 font-medium text-sm flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-green-500" /> Live</div>
@@ -195,19 +195,19 @@ function FinanceMockup() {
 
 function ContentMockup() {
   return (
-    <div className="w-full h-full flex items-center justify-center p-6">
-       <div className="w-full h-[260px] bg-[#111] rounded-xl border border-white/10 shadow-2xl overflow-hidden font-sans flex flex-col relative">
+    <div className="w-full h-full flex items-center justify-center p-4 md:p-6">
+       <div className="w-full min-h-[260px] bg-[#111] rounded-xl border border-white/10 shadow-2xl overflow-hidden font-sans flex flex-col relative">
           <div className="p-3 border-b border-white/10 flex justify-between items-center bg-[#1a1a1a]">
              <div className="text-white/90 text-sm font-medium">Content Pipeline</div>
-             <div className="bg-purple-500/20 text-purple-400 text-[10px] px-2 py-0.5 rounded border border-purple-500/30">Autopilot</div>
+             <div className="bg-purple-500/20 text-purple-400 text-xs px-2.5 py-1 rounded-md border border-purple-500/30">Autopilot</div>
           </div>
           <div className="p-4 flex-1 flex gap-3 overflow-hidden">
              {/* Columns */}
              {[ { title: 'Ideas', items: [1,2] }, { title: 'Drafts', items: [1] }, { title: 'Published', items: [1,2,3] } ].map(col => (
                <div key={col.title} className="flex-1 bg-white/5 rounded-lg border border-white/5 p-2 flex flex-col gap-2">
-                 <div className="text-white/50 text-[10px] font-medium px-1">{col.title}</div>
+                 <div className="text-white/60 text-xs font-medium px-1 tracking-wide">{col.title}</div>
                  {col.items.map(i => (
-                    <div key={i} className="bg-white/10 h-10 rounded shadow border border-white/5 p-2 flex flex-col justify-center gap-1.5">
+                    <div key={i} className="bg-white/10 h-10 rounded shadow border border-white/5 p-2 flex flex-col justify-center gap-1.5 hover:bg-white/15 transition-colors">
                        <div className="w-3/4 h-1 bg-white/30 rounded-full" />
                        <div className="w-1/2 h-1 bg-white/10 rounded-full" />
                     </div>
@@ -296,7 +296,7 @@ export default function Testimonials() {
       id="proof"
       className="relative py-24 md:py-36 bg-[#F4F4F0] text-[#111111] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         {/* Header */}
         <motion.div
@@ -328,38 +328,44 @@ export default function Testimonials() {
               }`}
             >
               {/* Graphic Side */}
-              <div className={`min-h-[300px] lg:min-h-full border-b lg:border-b-0 lg:border-r relative overflow-hidden ${idx % 2 === 0 ? "bg-[#fcfcfc] border-[#DCDCCF]" : "bg-[#111111] border-white/5"}`}>
+              <div className={`py-8 lg:py-0 min-h-[250px] lg:min-h-full border-b lg:border-b-0 lg:border-r relative overflow-hidden flex flex-col justify-center ${idx % 2 === 0 ? "bg-[#fcfcfc] border-[#DCDCCF]" : "bg-[#111111] border-white/5"}`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#E63946]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
-                <div className="absolute top-6 left-6 z-10">
-                  <div className={`font-mono text-[10px] uppercase tracking-[0.2em] ${idx % 2 === 0 ? "text-black/40" : "text-white/40"}`}>Built System</div>
-                  <div className={`text-sm mt-1 font-medium ${idx % 2 === 0 ? "text-black/90" : "text-white/90"}`}>{study.built}</div>
+                <div className={`absolute top-4 left-4 md:top-6 md:left-6 z-10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-xl border shadow-sm ${idx % 2 === 0 ? "bg-white/90 border-black/5" : "bg-black/80 border-white/10"}`}>
+                  <div className={`font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold ${idx % 2 === 0 ? "text-black/50" : "text-white/50"}`}>Built System</div>
+                  <div className={`text-sm md:text-base mt-0.5 font-bold ${idx % 2 === 0 ? "text-black" : "text-white"}`}>{study.built}</div>
                 </div>
-                <div className="w-full h-full group-hover:scale-[1.02] transition-transform duration-700 relative z-0">
+                <div className="w-full h-full flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700 relative z-0 mt-12 lg:mt-0">
                   {study.graphic}
                 </div>
               </div>
 
               {/* Text Side */}
-              <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-                <div className="mb-8 relative z-10">
-                  <span className="inline-block bg-gradient-to-r from-[#E63946] to-[#ff4d5a] text-white font-sans font-bold text-lg md:text-xl tracking-tight px-4 py-2 rounded-xl shadow-[0_10px_30px_-10px_rgba(230,57,70,0.6)] border border-white/20">
-                    {study.metric}
-                  </span>
+              <div className="p-5 sm:p-6 md:p-12 lg:p-16 flex flex-col justify-center">
+                <div className="mb-6 md:mb-8 relative z-10 flex items-center">
+                  <div className={`inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full border shadow-sm transition-all hover:scale-[1.02] duration-300 ${idx % 2 === 0 ? "bg-white border-black/5 text-[#111111] shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]" : "bg-[#161616] border-white/10 text-[#F4F4F0] shadow-[0_4px_20px_-10px_rgba(255,255,255,0.05)]"}`}>
+                    <span className="relative flex h-2.5 w-2.5 shrink-0">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E63946] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E63946] shadow-[0_0_8px_rgba(230,57,70,0.8)]"></span>
+                    </span>
+                    <span className="font-sans font-bold text-sm md:text-base tracking-wide">{study.metric}</span>
+                  </div>
                 </div>
                 
                 <Quote className={`w-8 h-8 mb-6 ${idx % 2 === 0 ? "text-black/10" : "text-white/10"}`} />
-                <p className={`text-lg md:text-xl lg:text-2xl leading-relaxed mb-10 font-serif italic ${idx % 2 === 0 ? "text-black/80" : "text-white/80"}`}>
+                <p className={`text-[1.1rem] md:text-xl lg:text-2xl leading-relaxed mb-8 md:mb-10 font-serif italic ${idx % 2 === 0 ? "text-black/80" : "text-white/80"}`}>
                   "{study.quote}"
                 </p>
 
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#E63946] to-[#ff4d5a] shadow-[0_0_15px_rgba(230,57,70,0.4)] flex items-center justify-center text-white font-serif text-2xl font-semibold relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                <div className="flex items-center gap-3 md:gap-4 mt-auto pt-4 md:pt-8">
+                  <div className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-gradient-to-br from-[#E63946] to-[#ff4d5a] shadow-[0_0_15px_rgba(230,57,70,0.4)] flex items-center justify-center text-white font-serif text-xl md:text-2xl font-semibold relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
                     <div className="absolute inset-0 bg-white/20 animate-pulse mix-blend-overlay" />
                     {study.name.charAt(0)}
                   </div>
-                  <div>
-                    <div className={`font-medium ${idx % 2 === 0 ? "text-black" : "text-white"}`}>{study.name}</div>
-                    <div className={`text-sm ${idx % 2 === 0 ? "text-black/40" : "text-white/40"}`}>{study.role}, {study.company}</div>
+                  <div className="min-w-0">
+                    <div className={`font-medium truncate ${idx % 2 === 0 ? "text-black" : "text-white"}`}>{study.name}</div>
+                    <div className={`text-sm text-wrap leading-tight mt-0.5 ${idx % 2 === 0 ? "text-black/40" : "text-white/40"}`}>
+                      {study.role}, {study.company}
+                    </div>
                   </div>
                 </div>
               </div>

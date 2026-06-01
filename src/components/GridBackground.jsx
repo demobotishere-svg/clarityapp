@@ -7,6 +7,9 @@ export default function GridBackground() {
   const [nodes, setNodes] = useState([]);
 
   useEffect(() => {
+    // Avoid generating heavy SVG animations on mobile devices to prevent lag
+    if (window.innerWidth < 768) return;
+
     // Generate floating nodes on mount
     const newNodes = Array.from({ length: 20 }).map((_, i) => ({
       id: i,

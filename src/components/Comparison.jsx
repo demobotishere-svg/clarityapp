@@ -235,52 +235,106 @@ export default function Comparison() {
             </p>
           </div>
 
-          <div className="relative z-10 flex items-center justify-center w-full lg:w-[320px] shrink-0 h-48 lg:h-auto mt-8 lg:mt-0">
-             <div className="relative w-40 h-40 flex items-center justify-center">
+          <div className="relative z-10 flex items-center justify-center w-full lg:w-[350px] shrink-0 h-48 lg:h-auto mt-8 lg:mt-0">
+             <div className="relative w-full max-w-[280px] flex flex-col items-center">
                 
-                {/* Glowing Core (The Director) */}
+                {/* DIRECTOR NODE */}
                 <motion.div 
-                  animate={{ scale: [1, 1.15, 1], boxShadow: ["0 0 20px rgba(230,57,70,0.5)", "0 0 50px rgba(230,57,70,0.8)", "0 0 20px rgba(230,57,70,0.5)"] }} 
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-12 h-12 bg-[#E63946] rounded-full z-20 relative flex items-center justify-center"
+                  initial={{ y: 10, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-[#E63946] text-white px-5 py-2.5 rounded-xl text-xs font-mono font-bold tracking-widest shadow-[0_0_20px_rgba(230,57,70,0.5)] border border-white/20 flex items-center gap-2 z-20"
                 >
-                  <div className="w-4 h-4 bg-white rounded-full opacity-80" />
-                </motion.div>
-                
-                {/* Emitting Waves (The Instructions) */}
-                {[0, 1, 2].map((i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ scale: 1, opacity: 0.8 }}
-                    animate={{ scale: 3.5, opacity: 0 }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeOut", delay: i * 1 }}
-                    className="absolute inset-0 m-auto w-12 h-12 border-[1.5px] border-[#E63946] rounded-full z-10"
-                  />
-                ))}
-
-                {/* Orbiting Elements (The Machines) */}
-                <motion.div
-                   animate={{ rotate: 360 }}
-                   transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                   className="absolute inset-[-40px] rounded-full border border-white/10"
-                >
-                   {/* Machine 1 */}
-                   <div className="absolute top-0 left-1/2 w-3 h-3 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
-                   {/* Machine 2 */}
-                   <div className="absolute bottom-0 left-1/2 w-3 h-3 bg-white rounded-full -translate-x-1/2 translate-y-1/2 shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
-                   {/* Machine 3 */}
-                   <div className="absolute top-1/2 left-0 w-3 h-3 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                  YOU (DIRECTOR)
                 </motion.div>
 
-                {/* Secondary inner orbit */}
-                <motion.div
-                   animate={{ rotate: -360 }}
-                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                   className="absolute inset-[-10px] rounded-full border border-white/5 border-dashed"
-                >
-                   <div className="absolute top-[15%] left-[85%] w-1.5 h-1.5 bg-gray-400 rounded-full" />
-                   <div className="absolute top-[85%] left-[15%] w-1.5 h-1.5 bg-gray-400 rounded-full" />
-                </motion.div>
+                {/* CONNECTING LINES */}
+                <div className="relative w-full h-12 flex justify-center z-10 -my-1">
+                   {/* Main vertical line */}
+                   <div className="w-[2px] h-full bg-gradient-to-b from-[#E63946]/50 to-white/10 relative">
+                     <motion.div 
+                       animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
+                       transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                       className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[12px] bg-[#E63946] rounded-full shadow-[0_0_10px_#E63946]" 
+                     />
+                   </div>
+                   
+                   {/* Horizontal branching line */}
+                   <div className="absolute bottom-0 left-[44px] right-[44px] h-[2px] bg-white/10" />
+                   
+                   {/* Side vertical drops */}
+                   <div className="absolute top-full left-[44px] w-[2px] h-5 bg-white/10">
+                     <motion.div 
+                       animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
+                       transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.4 }}
+                       className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[8px] bg-blue-400 rounded-full shadow-[0_0_8px_#3b82f6]" 
+                     />
+                   </div>
+                   <div className="absolute top-full right-[44px] w-[2px] h-5 bg-white/10">
+                     <motion.div 
+                       animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
+                       transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.8 }}
+                       className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[8px] bg-purple-400 rounded-full shadow-[0_0_8px_#a855f7]" 
+                     />
+                   </div>
+                   <div className="absolute top-full left-1/2 -translate-x-1/2 w-[2px] h-5 bg-white/10">
+                     <motion.div 
+                       animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
+                       transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.6 }}
+                       className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[8px] bg-green-400 rounded-full shadow-[0_0_8px_#22c55e]" 
+                     />
+                   </div>
+                </div>
+
+                {/* AGENT NODES */}
+                <div className="flex justify-between w-full mt-4 z-20 px-6">
+                  {/* Agent 1 */}
+                  <motion.div 
+                    initial={{ y: 10, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="flex flex-col items-center gap-2"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.15)] relative overflow-hidden group">
+                       <div className="absolute inset-0 bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors" />
+                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <span className="text-[9px] text-white/50 font-mono tracking-widest">SUPPORT</span>
+                  </motion.div>
+
+                  {/* Agent 2 */}
+                  <motion.div 
+                    initial={{ y: 10, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="flex flex-col items-center gap-2"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.15)] relative overflow-hidden group">
+                       <div className="absolute inset-0 bg-green-500/10 group-hover:bg-green-500/20 transition-colors" />
+                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                    </div>
+                    <span className="text-[9px] text-white/50 font-mono tracking-widest">DATA</span>
+                  </motion.div>
+
+                  {/* Agent 3 */}
+                  <motion.div 
+                    initial={{ y: 10, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="flex flex-col items-center gap-2"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.15)] relative overflow-hidden group">
+                       <div className="absolute inset-0 bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors" />
+                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <span className="text-[9px] text-white/50 font-mono tracking-widest">SALES</span>
+                  </motion.div>
+                </div>
                 
              </div>
           </div>
