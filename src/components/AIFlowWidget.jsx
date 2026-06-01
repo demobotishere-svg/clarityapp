@@ -23,7 +23,7 @@ export default function TimeAuditWidget() {
         <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#666666]">
           Your week · hours spent
         </div>
-        <div className="font-serif text-xl md:text-2xl mt-1 text-[#111111]">Time Audit</div>
+        <div className="font-serif text-xl md:text-2xl mt-1 text-[#1A1916]">Time Audit</div>
       </div>
 
       {/* Task rows */}
@@ -35,37 +35,37 @@ export default function TimeAuditWidget() {
 
           return (
             <div key={task.label} className="px-5 py-4 hover:bg-black/[0.01] transition-colors">
-              <div className="text-sm font-medium text-[#111111] mb-3">{task.label}</div>
+              <div className="text-sm font-medium text-[#1A1916] mb-3">{task.label}</div>
               
               <div className="flex flex-col gap-3">
                 {/* Before AI Bar */}
                 <div className="flex items-center gap-3">
-                  <div className="w-[65px] text-[10px] font-mono tracking-wider uppercase text-[#E63946]">Before</div>
+                  <div className="w-[65px] text-[10px] font-mono tracking-wider uppercase text-[#15604E]">Before</div>
                   <div className="flex-1 h-1.5 rounded-full bg-[#EAEAE6]">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${manualPct}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: i * 0.1, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-[#E63946] to-[#ff4d5a] rounded-full shadow-[0_0_10px_rgba(230,57,70,0.4)]"
+                      className="h-full bg-gradient-to-r from-[#15604E] to-[#ff4d5a] rounded-full shadow-[0_0_10px_rgba(230,57,70,0.4)]"
                     />
                   </div>
-                  <div className="w-[45px] text-right font-mono text-xs font-semibold text-[#E63946]">{task.manual.toFixed(1)}h</div>
+                  <div className="w-[45px] text-right font-mono text-xs font-semibold text-[#15604E]">{task.manual.toFixed(1)}h</div>
                 </div>
 
                 {/* After AI Bar */}
                 <div className="flex items-center gap-3">
-                  <div className="w-[65px] text-[10px] font-mono tracking-wider uppercase text-[#2A9D8F]">After AI</div>
+                  <div className="w-[65px] text-[10px] font-mono tracking-wider uppercase text-[#15604E]">After AI</div>
                   <div className="flex-1 h-1.5 rounded-full bg-[#EAEAE6]">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${autoPct}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: i * 0.1 + 0.2, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-[#2A9D8F] to-[#34c2b2] rounded-full shadow-[0_0_10px_rgba(42,157,143,0.4)]"
+                      className="h-full bg-gradient-to-r from-[#15604E] to-[#34c2b2] rounded-full shadow-[0_0_10px_rgba(42,157,143,0.4)]"
                     />
                   </div>
-                  <div className="w-[45px] text-right font-mono text-xs font-semibold text-[#2A9D8F]">{task.auto.toFixed(1)}h</div>
+                  <div className="w-[45px] text-right font-mono text-xs font-semibold text-[#15604E]">{task.auto.toFixed(1)}h</div>
                 </div>
               </div>
             </div>
@@ -79,15 +79,15 @@ export default function TimeAuditWidget() {
            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#666666]">
              Total hours reclaimed
            </div>
-           <div className="font-serif text-3xl md:text-4xl text-[#2A9D8F] mt-1">
-             +{SAVED.toFixed(1)} <span className="text-xl md:text-2xl font-sans italic text-[#2A9D8F]/60">hrs/wk</span>
+           <div className="font-serif text-3xl md:text-4xl text-[#15604E] mt-1">
+             +{SAVED.toFixed(1)} <span className="text-xl md:text-2xl font-sans italic text-[#15604E]/60">hrs/wk</span>
            </div>
         </div>
         <div className="text-right">
            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#666666]">
              New weekly load
            </div>
-           <div className="font-serif text-xl md:text-2xl text-[#111111] mt-1">
+           <div className="font-serif text-xl md:text-2xl text-[#1A1916] mt-1">
              {TOTAL_AUTO.toFixed(1)} <span className="text-sm md:text-base font-sans italic text-[#666666]">hrs/wk</span>
            </div>
         </div>

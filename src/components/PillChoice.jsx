@@ -12,7 +12,7 @@ export default function PillChoice() {
   return (
     <section
       data-testid="pill-choice-section"
-      className="relative py-24 md:py-36 border-t border-[#DCDCCF] bg-[#F4F4F0] overflow-hidden"
+      className="relative py-24 md:py-36 border-t border-[#DCDCCF] bg-[#FAF8F3] overflow-hidden"
     >
       {/* Dynamic Background Glow Aura */}
       <div 
@@ -65,19 +65,19 @@ export default function PillChoice() {
               alt="Frustrated professional"
               className="absolute inset-0 w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-[1500ms]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-[#111111]/20"></div>
-            <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end text-[#F4F4F0]">
-              <div className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#F4F4F0]/70">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1A1916] via-[#1A1916]/60 to-[#1A1916]/20"></div>
+            <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end text-[#FAF8F3]">
+              <div className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#FAF8F3]/70">
                 <span className="w-2 h-2 rounded-full bg-[#3a7bd5]"></span> Blue pill
               </div>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
                 Log back in tomorrow.
                 <br />
-                <span className="italic text-[#F4F4F0]/70">
+                <span className="italic text-[#FAF8F3]/70">
                   Continue the 14-hour grind.
                 </span>
               </h3>
-              <p className="mt-3 text-sm md:text-base text-[#F4F4F0]/70 max-w-md">
+              <p className="mt-3 text-sm md:text-base text-[#FAF8F3]/70 max-w-md">
                 Same loop. Same exhaustion. Same wondering if there was a better
                 way.
               </p>
@@ -100,17 +100,17 @@ export default function PillChoice() {
                 : { scale: 1, opacity: 1, filter: "blur(0px) grayscale(0%)" }
             }
             data-testid="red-pill-card"
-            className="relative group overflow-hidden rounded-3xl aspect-[4/5] md:aspect-[3/4] border border-[#DCDCCF] cursor-pointer transition-all duration-[600ms] hover:border-[#E63946]/60 hover:shadow-[0_0_30px_rgba(230,57,70,0.15)]"
+            className="relative group overflow-hidden rounded-3xl aspect-[4/5] md:aspect-[3/4] border border-[#DCDCCF] cursor-pointer transition-all duration-[600ms] hover:border-[#15604E]/60 hover:shadow-[0_0_30px_rgba(230,57,70,0.15)]"
           >
             <img
               src="https://images.unsplash.com/photo-1713947505775-4e3af92a4ee7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200"
               alt="Confident professional"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1500ms]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#E63946]/80 via-[#E63946]/30 to-transparent"></div>
-            <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end text-[#F4F4F0]">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#15604E]/80 via-[#15604E]/30 to-transparent"></div>
+            <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end text-[#FAF8F3]">
               <div className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em]">
-                <span className="w-2 h-2 rounded-full bg-[#F4F4F0] pulse-dot"></span>{" "}
+                <span className="w-2 h-2 rounded-full bg-[#FAF8F3] pulse-dot"></span>{" "}
                 Red pill
               </div>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
@@ -120,13 +120,13 @@ export default function PillChoice() {
                   Manage the technology before it manages you.
                 </span>
               </h3>
-              <p className="mt-3 text-sm md:text-base text-[#F4F4F0]/90 max-w-md">
+              <p className="mt-3 text-sm md:text-base text-[#FAF8F3]/90 max-w-md">
                 Claim absolute authority over your career and time.
               </p>
               <a
                 href="#enrol"
                 data-testid="pill-cta-button"
-                className="mt-6 inline-flex items-center gap-2 self-start bg-[#F4F4F0] text-[#111111] px-5 py-3 rounded-full text-sm font-medium hover:bg-white transition-colors"
+                className="mt-6 inline-flex items-center gap-2 self-start bg-[#FAF8F3] text-[#1A1916] px-5 py-3 rounded-full text-sm font-medium hover:bg-white transition-colors"
               >
                 Take the red pill <ArrowRight className="w-4 h-4" />
               </a>
@@ -143,7 +143,7 @@ export default function PillChoice() {
         >
           <h3 className="font-serif text-3xl md:text-5xl leading-tight">
             A year from now, will you wish you&apos;d{" "}
-            <span className="italic text-[#E63946]">started?</span>
+            <span className="italic text-[#15604E]">started?</span>
           </h3>
           <p className="mt-4 text-[#666666] text-base md:text-lg">
             Not because of urgency. Because considered things tend to compound.

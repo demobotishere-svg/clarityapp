@@ -69,7 +69,7 @@ export default function Audience() {
   return (
     <section
       data-testid="audience-section"
-      className="relative py-24 md:py-36 border-t border-[#DCDCCF] bg-[#F4F4F0]"
+      className="relative py-24 md:py-36 border-t border-[#DCDCCF] bg-[#FAF8F3]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.div
@@ -95,7 +95,7 @@ export default function Audience() {
               a living — you qualify.
               <br />
               <br />
-              <span className="text-[#111111]">
+              <span className="text-[#1A1916]">
                 The only prerequisite: you can write a clear email and you have a
                 real job with real problems.
               </span>
@@ -113,23 +113,74 @@ export default function Audience() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.05, ease }}
               whileHover={{ y: -4 }}
-              className="group relative overflow-hidden bg-white border border-[#DCDCCF]/80 rounded-2xl p-6 md:p-7 hover:border-[#111111] transition-all duration-500 hover:shadow-2xl"
+              className="group relative overflow-hidden bg-white border border-[#DCDCCF]/80 rounded-2xl p-6 md:p-7 hover:border-[#1A1916] transition-all duration-500 hover:shadow-2xl"
             >
               {/* Dynamic Design Accent */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#E63946]/[0.02] to-[#2A9D8F]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#E63946] to-[#2A9D8F] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#15604E]/[0.02] to-[#15604E]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#15604E] to-[#15604E] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 pointer-events-none" />
               
               <div className="relative z-10 flex items-start justify-between">
-                <div className="w-10 h-10 rounded-xl bg-[#F4F4F0] border border-[#DCDCCF] flex items-center justify-center group-hover:bg-[#111111] group-hover:text-[#F4F4F0] group-hover:border-[#111111] transition-all">
+                <div className="w-10 h-10 rounded-xl bg-[#FAF8F3] border border-[#DCDCCF] flex items-center justify-center group-hover:bg-[#1A1916] group-hover:text-[#FAF8F3] group-hover:border-[#1A1916] transition-all">
                   <Icon className="w-5 h-5" strokeWidth={1.5} />
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-[#111111]/30 group-hover:text-[#E63946] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                <ArrowUpRight className="w-4 h-4 text-[#1A1916]/30 group-hover:text-[#15604E] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
               </div>
               <h3 className="relative z-10 mt-6 font-serif text-2xl leading-tight">{title}</h3>
               <p className="relative z-10 mt-3 text-sm text-[#666666] leading-relaxed">{body}</p>
             </motion.div>
           ))}
         </div>
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease }}
+            className="bg-[#15604E] text-white rounded-[2rem] p-8 md:p-12 shadow-lg"
+          >
+            <div className="text-sm font-semibold tracking-widest uppercase text-white/80 mb-8 flex items-center gap-3">
+              This is you
+            </div>
+            <ul className="space-y-5">
+              {[
+                "You're good at what you do, but overwhelmed by the sheer volume of \"work about work.\"",
+                "You've felt AI is powerful, but struggle to move beyond generic ChatGPT answers.",
+                "You want the logic, not just a list of 50 prompt templates that expire next week.",
+                "You come from any field — marketing, HR, ops, finance — and want to apply AI to your specific domain."
+              ].map((item, idx) => (
+                <li key={idx} className="flex gap-4 items-start text-white/90 text-base md:text-lg leading-relaxed">
+                  <span className="font-bold shrink-0 mt-0.5">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, delay: 0.15 }}
+            transition={{ duration: 0.8, ease }}
+            className="bg-white border border-[#DCDCCF] rounded-[2rem] p-8 md:p-12 shadow-sm"
+          >
+            <div className="text-sm font-semibold tracking-widest uppercase text-[#666666] mb-8 flex items-center gap-3">
+              Not for you
+            </div>
+            <ul className="space-y-5">
+              {[
+                "You want a job-placement guarantee or a college degree replacement.",
+                "You're looking for a magic shortcut to getting rich quick.",
+                "You prefer passive learning and won't actually build during the live sessions."
+              ].map((item, idx) => (
+                <li key={idx} className="flex gap-4 items-start text-[#666666] text-base md:text-lg leading-relaxed">
+                  <span className="font-bold text-[#15604E] shrink-0 mt-0.5">✕</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );

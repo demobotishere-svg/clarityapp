@@ -81,7 +81,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-[#F4F4F0] md:bg-[#F4F4F0]/95 md:backdrop-blur-2xl flex flex-col pt-20 px-8 pb-10 md:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-[#FAF8F3] md:bg-[#FAF8F3]/95 md:backdrop-blur-2xl flex flex-col pt-20 px-8 pb-10 md:hidden overflow-y-auto"
             onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
           >
             <motion.nav
@@ -101,12 +101,12 @@ export default function Navbar() {
                     onClick={() => setOpen(false)}
                     data-testid={`nav-mobile-link-${item.label.toLowerCase().replace(/\s/g, "-")}`}
                     className={`flex justify-between items-center py-5 border-b border-[#DCDCCF]/60 group transition-colors duration-200 ${
-                      isActive ? "text-[#E63946]" : "text-[#111111] hover:text-[#E63946]"
+                      isActive ? "text-[#15604E]" : "text-[#1A1916] hover:text-[#15604E]"
                     }`}
                   >
                     <span className="font-serif text-3xl italic">{item.label}</span>
                     <ArrowUpRight
-                      className={`w-6 h-6 text-[#E63946] transition-all duration-200 ${
+                      className={`w-6 h-6 text-[#15604E] transition-all duration-200 ${
                         isActive
                           ? "opacity-100"
                           : "opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -125,7 +125,7 @@ export default function Navbar() {
               href="#enrol"
               onClick={() => setOpen(false)}
               data-testid="nav-mobile-cta"
-              className="mt-6 inline-flex items-center justify-center gap-2 bg-[#111111] text-[#F4F4F0] px-6 py-4 rounded-full text-sm font-medium button-sweep-effect w-full shadow-lg hover:bg-[#E63946] transition-colors duration-300"
+              className="mt-6 inline-flex items-center justify-center gap-2 bg-[#15604E] text-white px-6 py-4 rounded-full text-sm font-medium button-sweep-effect w-full shadow-lg hover:bg-[#1B7560] transition-colors duration-300"
             >
               Unlock Access <ArrowUpRight className="w-4 h-4" />
             </motion.a>
@@ -141,7 +141,7 @@ export default function Navbar() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled || open
-            ? "bg-[#F4F4F0]/95 backdrop-blur-xl border-b border-[#DCDCCF] shadow-sm"
+            ? "bg-[#FAF8F3]/95 backdrop-blur-xl border-b border-[#DCDCCF] shadow-sm"
             : "bg-transparent border-b border-transparent"
         }`}
       >
@@ -149,7 +149,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" data-testid="nav-logo" className="flex items-center gap-2 shrink-0">
             <span className="font-serif text-2xl md:text-3xl italic leading-none">
-              Clarity<span className="text-[#E63946]">.</span>
+              Clarity<span className="text-[#15604E]">.</span>
             </span>
           </a>
 
@@ -167,20 +167,20 @@ export default function Navbar() {
                   onMouseEnter={() => setHoveredLabel(item.label)}
                   data-testid={`nav-link-${item.label.toLowerCase().replace(/\s/g, "-")}`}
                   className={`relative px-4 py-2.5 rounded-full text-sm font-medium tracking-wide transition-colors duration-300 ${
-                    isActive ? "text-[#E63946]" : "text-[#111111]/80 hover:text-[#111111]"
+                    isActive ? "text-[#15604E]" : "text-[#1A1916]/80 hover:text-[#1A1916]"
                   }`}
                 >
                   {hoveredLabel === item.label && (
                     <motion.span
                       layoutId="nav-hover-bg"
-                      className="absolute inset-0 bg-[#111111]/5 rounded-full"
+                      className="absolute inset-0 bg-[#1A1916]/5 rounded-full"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
                   {isActive && (
                     <motion.span
                       layoutId="nav-active-line"
-                      className="absolute bottom-1 left-4 right-4 h-[2px] bg-[#E63946] rounded-full z-20"
+                      className="absolute bottom-1 left-4 right-4 h-[2px] bg-[#15604E] rounded-full z-20"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -194,7 +194,7 @@ export default function Navbar() {
           <a
             href="#enrol"
             data-testid="nav-cta-button"
-            className="hidden md:inline-flex items-center gap-2 bg-[#111111] text-[#F4F4F0] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#E63946] transition-colors duration-300 button-sweep-effect shrink-0"
+            className="hidden md:inline-flex items-center gap-2 bg-[#15604E] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1B7560] transition-colors duration-300 button-sweep-effect shrink-0 shadow-sm hover:shadow"
           >
             Unlock Access
             <ArrowUpRight className="w-4 h-4" />
@@ -206,25 +206,25 @@ export default function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden relative z-50 w-11 h-11 flex flex-col items-center justify-center gap-[5px] rounded-xl hover:bg-[#111111]/5 transition-colors focus:outline-none shrink-0"
+            className="md:hidden relative z-50 w-11 h-11 flex flex-col items-center justify-center gap-[5px] rounded-xl hover:bg-[#1A1916]/5 transition-colors focus:outline-none shrink-0"
           >
             <motion.span
               variants={bar1}
               animate={open ? "open" : "closed"}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="w-[22px] h-[2px] bg-[#111111] block origin-center rounded-full"
+              className="w-[22px] h-[2px] bg-[#1A1916] block origin-center rounded-full"
             />
             <motion.span
               variants={bar2}
               animate={open ? "open" : "closed"}
               transition={{ duration: 0.18 }}
-              className="w-[22px] h-[2px] bg-[#111111] block rounded-full"
+              className="w-[22px] h-[2px] bg-[#1A1916] block rounded-full"
             />
             <motion.span
               variants={bar3}
               animate={open ? "open" : "closed"}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="w-[22px] h-[2px] bg-[#111111] block origin-center rounded-full"
+              className="w-[22px] h-[2px] bg-[#1A1916] block origin-center rounded-full"
             />
           </button>
         </div>

@@ -6,6 +6,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import LeadForm from "@/components/LeadForm";
 import Comparison from "@/components/Comparison";
+import Architect from "@/components/Architect";
+import WorkingSystems from "@/components/WorkingSystems";
 import Audience from "@/components/Audience";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
@@ -15,6 +17,7 @@ import MouseGlow from "@/components/MouseGlow";
 import ScrollProgress from "@/components/ScrollProgress";
 import GridBackground from "@/components/GridBackground";
 import ScrollReveal from "@/components/ScrollReveal";
+import FinalCTA from "@/components/FinalCTA";
 
 export default function Home() {
   return (
@@ -33,7 +36,7 @@ export default function Home() {
         <GridBackground />
         <Hero />
         
-        <section id="enrol" data-testid="lead-section-1" className="border-t border-[#DCDCCF] bg-[#F4F4F0]">
+        <section id="enrol" data-testid="lead-section-1" className="border-t border-[#DCDCCF] bg-[#FAF8F3]">
           <LeadForm 
             variant="primary" 
             testIdSuffix="1" 
@@ -51,7 +54,15 @@ export default function Home() {
           <Comparison />
         </ScrollReveal>
 
-        <section data-testid="lead-section-2" className="border-t border-[#white/10] bg-[#111111]">
+        <ScrollReveal>
+          <Architect />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <WorkingSystems />
+        </ScrollReveal>
+
+        <section data-testid="lead-section-2" className="border-t border-[#white/10] bg-[#1A1916]">
           <LeadForm 
             variant="secondary" 
             testIdSuffix="2" 
@@ -73,7 +84,7 @@ export default function Home() {
           <About />
         </ScrollReveal>
 
-        <section data-testid="lead-section-3" className="border-t border-[#DCDCCF] bg-[#F4F4F0]">
+        <section data-testid="lead-section-3" className="border-t border-[#DCDCCF] bg-[#FAF8F3]">
           <LeadForm 
             variant="primary" 
             testIdSuffix="3" 
@@ -91,7 +102,7 @@ export default function Home() {
           <Testimonials />
         </ScrollReveal>
 
-        <section data-testid="lead-section-4" className="border-t border-[#white/10] bg-[#111111]">
+        <section data-testid="lead-section-4" className="border-t border-[#white/10] bg-[#1A1916]">
           <LeadForm 
             variant="secondary" 
             testIdSuffix="4" 
@@ -109,19 +120,7 @@ export default function Home() {
           <PillChoice />
         </ScrollReveal>
 
-        <section data-testid="lead-section-5" className="border-t border-[#DCDCCF] bg-[#F4F4F0]">
-          <LeadForm 
-            variant="primary" 
-            testIdSuffix="5" 
-            layout="centered"
-            preTitle="THE FINAL PIECE"
-            title="Ready for your"
-            titleHighlight="15 minutes?"
-            description="The 15-minute architectural preview video and the AI-Native Design Blueprint — delivered straight to your WhatsApp instantly."
-            features={["Instant delivery", "15-minute watch time", "Lifetime system value"]}
-            buttonText="Send it to my WhatsApp"
-          />
-        </section>
+        <FinalCTA />
 
         <Footer />
       </motion.div>

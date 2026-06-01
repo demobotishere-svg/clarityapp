@@ -138,14 +138,14 @@ function GymMockup() {
           </div>
           <div className="w-full h-[80px] flex items-end gap-1.5 mt-2">
              {[20, 35, 25, 45, 60, 55, 80, 40, 95, 65, 100].map((h, i) => (
-               <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, backgroundColor: i > 8 ? '#E63946' : 'rgba(255,255,255,0.1)' }} />
+               <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, backgroundColor: i > 8 ? '#15604E' : 'rgba(255,255,255,0.1)' }} />
              ))}
           </div>
           <div className="flex flex-col gap-2 mt-auto">
              <div className="text-white/40 text-[10px] uppercase tracking-wider">Latest Automations</div>
              <div className="bg-white/5 border border-white/10 rounded-lg p-2 flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                   <div className="w-2 h-2 rounded-full bg-[#E63946]" />
+                   <div className="w-2 h-2 rounded-full bg-[#15604E]" />
                    <div className="text-white/80 text-xs">Replied to @fitness_junkie</div>
                 </div>
                 <div className="text-white/30 text-[10px]">2m ago</div>
@@ -294,7 +294,7 @@ export default function Testimonials() {
   return (
     <section 
       id="proof"
-      className="relative py-24 md:py-36 bg-[#F4F4F0] text-[#111111] overflow-hidden"
+      className="relative py-24 md:py-36 bg-[#FAF8F3] text-[#1A1916] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
@@ -306,11 +306,60 @@ export default function Testimonials() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
+          <div className="font-mono text-xs uppercase tracking-[0.25em] text-[#666666] mb-4">
+            This is already happening
+          </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
-            Don't take our word for it.<br />
-            <span className="italic text-black/50">See what our alumni built.</span>
+            The people who direct AI<br />
+            <span className="italic text-[#15604E]">are pulling away.</span>
           </h2>
+          <p className="mt-6 text-lg text-[#666666] max-w-2xl mx-auto">
+            You don&apos;t have to take our word for it. The builders and leaders watching this shift up close are saying the same thing — and changing who they pay, hire, and keep.
+          </p>
         </motion.div>
+
+        {/* Leader Quotes */}
+        <div className="max-w-4xl mx-auto mb-24 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white border border-[#DCDCCF] rounded-2xl p-8 shadow-sm flex flex-col justify-between"
+          >
+            <p className="font-serif italic text-xl md:text-2xl text-[#1A1916] leading-relaxed mb-8">
+              &quot;I am going to be hiring people at very high salaries very soon because of their upskilling in AI. I&apos;ve seen people use AI to do the work of 20 people by themselves.&quot;
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-serif text-xl font-bold text-gray-600 shrink-0">
+                SH
+              </div>
+              <div>
+                <div className="font-semibold text-gray-900">Sharan Hegde</div>
+                <div className="text-sm text-gray-500">Founder, The 1% Club</div>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, delay: 0.2 }}
+            className="bg-white border border-[#DCDCCF] rounded-2xl p-8 shadow-sm flex flex-col justify-between"
+          >
+            <p className="font-serif italic text-xl md:text-2xl text-[#1A1916] leading-relaxed mb-8">
+              &quot;You&apos;re not going to lose your job to an AI. You&apos;re going to lose your job to someone who uses AI.&quot;
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-serif text-xl font-bold text-gray-600 shrink-0">
+                JH
+              </div>
+              <div>
+                <div className="font-semibold text-gray-900">Jensen Huang</div>
+                <div className="text-sm text-gray-500">CEO, NVIDIA</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Featured Case Studies */}
         <div className="space-y-12 md:space-y-24">
@@ -323,18 +372,18 @@ export default function Testimonials() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
               className={`group grid grid-cols-1 lg:grid-cols-2 gap-0 border rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 ${
                 idx % 2 === 0 
-                  ? "bg-[#ffffff] border-[#DCDCCF] text-[#111111] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]" 
-                  : "bg-[#0a0a0a] border-white/5 text-[#F4F4F0] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] hover:border-white/10"
+                  ? "bg-[#ffffff] border-[#DCDCCF] text-[#1A1916] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]" 
+                  : "bg-[#FAF8F3] border-[#DCDCCF] text-[#1A1916] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.03)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)]"
               }`}
             >
               {/* Graphic Side */}
-              <div className={`py-8 lg:py-0 min-h-[250px] lg:min-h-full border-b lg:border-b-0 lg:border-r relative overflow-hidden flex flex-col justify-center ${idx % 2 === 0 ? "bg-[#fcfcfc] border-[#DCDCCF]" : "bg-[#111111] border-white/5"}`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#E63946]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
-                <div className={`absolute top-4 left-4 md:top-6 md:left-6 z-10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-xl border shadow-sm ${idx % 2 === 0 ? "bg-white/90 border-black/5" : "bg-black/80 border-white/10"}`}>
-                  <div className={`font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold ${idx % 2 === 0 ? "text-black/50" : "text-white/50"}`}>Built System</div>
-                  <div className={`text-sm md:text-base mt-0.5 font-bold ${idx % 2 === 0 ? "text-black" : "text-white"}`}>{study.built}</div>
+              <div className={`py-8 lg:py-0 min-h-[250px] lg:min-h-full border-b lg:border-b-0 lg:border-r relative overflow-hidden flex flex-col justify-center ${idx % 2 === 0 ? "bg-[#fcfcfc] border-[#DCDCCF]" : "bg-[#F9F9F6] border-[#DCDCCF]"}`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#15604E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
+                <div className={`absolute top-4 left-4 md:top-6 md:left-6 z-10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-xl border shadow-sm ${idx % 2 === 0 ? "bg-white/90 border-black/5" : "bg-white/70 border-black/5"}`}>
+                  <div className={`font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-black/50`}>Built System</div>
+                  <div className={`text-sm md:text-base mt-0.5 font-bold text-black`}>{study.built}</div>
                 </div>
-                <div className="w-full h-full flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700 relative z-0 mt-12 lg:mt-0">
+                <div className="w-full h-full flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700 relative z-0 pt-24 pb-8 px-4 mt-8 lg:mt-0">
                   {study.graphic}
                 </div>
               </div>
@@ -342,28 +391,28 @@ export default function Testimonials() {
               {/* Text Side */}
               <div className="p-5 sm:p-6 md:p-12 lg:p-16 flex flex-col justify-center">
                 <div className="mb-6 md:mb-8 relative z-10 flex items-center">
-                  <div className={`inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full border shadow-sm transition-all hover:scale-[1.02] duration-300 ${idx % 2 === 0 ? "bg-white border-black/5 text-[#111111] shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]" : "bg-[#161616] border-white/10 text-[#F4F4F0] shadow-[0_4px_20px_-10px_rgba(255,255,255,0.05)]"}`}>
+                  <div className={`inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full border shadow-sm transition-all hover:scale-[1.02] duration-300 ${idx % 2 === 0 ? "bg-white border-black/5 text-[#1A1916] shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]" : "bg-white/60 border-black/5 text-[#1A1916] shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"}`}>
                     <span className="relative flex h-2.5 w-2.5 shrink-0">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E63946] opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E63946] shadow-[0_0_8px_rgba(230,57,70,0.8)]"></span>
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#15604E] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#15604E] shadow-[0_0_8px_rgba(230,57,70,0.8)]"></span>
                     </span>
                     <span className="font-sans font-bold text-sm md:text-base tracking-wide">{study.metric}</span>
                   </div>
                 </div>
                 
-                <Quote className={`w-8 h-8 mb-6 ${idx % 2 === 0 ? "text-black/10" : "text-white/10"}`} />
-                <p className={`text-[1.1rem] md:text-xl lg:text-2xl leading-relaxed mb-8 md:mb-10 font-serif italic ${idx % 2 === 0 ? "text-black/80" : "text-white/80"}`}>
+                <Quote className={`w-8 h-8 mb-6 text-black/10`} />
+                <p className={`text-[1.1rem] md:text-xl lg:text-2xl leading-relaxed mb-8 md:mb-10 font-serif italic text-black/80`}>
                   "{study.quote}"
                 </p>
 
                 <div className="flex items-center gap-3 md:gap-4 mt-auto pt-4 md:pt-8">
-                  <div className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-gradient-to-br from-[#E63946] to-[#ff4d5a] shadow-[0_0_15px_rgba(230,57,70,0.4)] flex items-center justify-center text-white font-serif text-xl md:text-2xl font-semibold relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                  <div className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-gradient-to-br from-[#15604E] to-[#ff4d5a] shadow-[0_0_15px_rgba(230,57,70,0.4)] flex items-center justify-center text-white font-serif text-xl md:text-2xl font-semibold relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
                     <div className="absolute inset-0 bg-white/20 animate-pulse mix-blend-overlay" />
                     {study.name.charAt(0)}
                   </div>
                   <div className="min-w-0">
-                    <div className={`font-medium truncate ${idx % 2 === 0 ? "text-black" : "text-white"}`}>{study.name}</div>
-                    <div className={`text-sm text-wrap leading-tight mt-0.5 ${idx % 2 === 0 ? "text-black/40" : "text-white/40"}`}>
+                    <div className={`font-medium truncate text-black`}>{study.name}</div>
+                    <div className={`text-sm text-wrap leading-tight mt-0.5 text-black/40`}>
                       {study.role}, {study.company}
                     </div>
                   </div>
@@ -378,8 +427,8 @@ export default function Testimonials() {
       {/* Marquee for volume proof */}
       <div className="mt-32 border-y border-black/5 bg-black/[0.02] py-8 relative overflow-hidden flex items-center">
         {/* Gradient fades for edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-r from-[#F4F4F0] to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-l from-[#F4F4F0] to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-r from-[#FAF8F3] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-l from-[#FAF8F3] to-transparent z-10" />
         
         <motion.div 
           animate={{ x: ["0%", "-50%"] }}
@@ -390,7 +439,7 @@ export default function Testimonials() {
           {[...MARQUEE_QUOTES, ...MARQUEE_QUOTES].map((q, i) => (
             <div key={i} className="flex items-center gap-8">
               <span className="font-serif italic text-black/50 text-xl">"{q}"</span>
-              <span className="text-[#E63946] text-xs">✦</span>
+              <span className="text-[#15604E] text-xs">✦</span>
             </div>
           ))}
         </motion.div>

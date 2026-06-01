@@ -16,7 +16,7 @@ export default function About() {
     <section
       id="about"
       data-testid="about-section"
-      className="relative py-24 md:py-36 border-t border-[#DCDCCF] bg-[#F4F4F0]"
+      className="relative py-24 md:py-36 border-t border-[#DCDCCF] bg-[#FAF8F3]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
@@ -33,9 +33,9 @@ export default function About() {
                 alt="Instructor"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/40 via-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6 text-[#F4F4F0]">
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#F4F4F0]/70">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1916]/40 via-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6 text-[#FAF8F3]">
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#FAF8F3]/70">
                   Instructor
                 </div>
                 <div className="font-serif text-3xl mt-1">Ships AI, not slides.</div>
@@ -76,7 +76,7 @@ export default function About() {
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-[#DCDCCF] pt-8">
               {STATS.map((s) => (
                 <div key={s.k} data-testid="about-stat" className="border-l border-[#DCDCCF] pl-4">
-                  <div className="font-serif text-3xl italic font-light leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#E63946] via-[#F4A261] to-[#2A9D8F]">{s.k}</div>
+                  <div className="font-serif text-3xl italic font-light leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#15604E] via-[#F4A261] to-[#15604E]">{s.k}</div>
                   <div className="font-mono text-[10px] md:text-[11px] uppercase tracking-widest text-[#666666] mt-2.5 leading-snug">
                     {s.v}
                   </div>

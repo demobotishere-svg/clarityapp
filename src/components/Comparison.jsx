@@ -7,10 +7,9 @@ import { ArrowRight } from "lucide-react";
 const ease = [0.22, 1, 0.36, 1];
 
 const LOOP = [
-  "Ask ChatGPT a question",
-  "Copy generated text",
-  "Paste into email / doc",
-  "Back to the manual grind"
+  "I've got Claude, ChatGPT, Gemini bookmarked. I open them, get a decent answer, and nothing actually changes about how I work.",
+  "I'm so much more than the mundane hours I pour in — but those hours cost me my evenings, my family time, my own space.",
+  "My junior finished in 20 minutes what takes me two hours. I need to figure this out — and I don't want to ask out loud."
 ];
 
 const PAIRS = [
@@ -36,24 +35,54 @@ export default function Comparison() {
       className="relative py-24 md:py-36 border-t border-[#DCDCCF]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease }}
+          className="relative overflow-hidden rounded-[2rem] py-8 px-8 md:py-10 md:px-12 lg:py-12 lg:px-16 bg-[#1A1916] shadow-2xl"
         >
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-[#666666]">
-            Industry insight
+          {/* Infused background image */}
+          <div
+            className="absolute inset-y-0 right-0 w-full md:w-1/2 pointer-events-none"
+            aria-hidden="true"
+          >
+            <div
+              className="absolute inset-0 z-10 hidden md:block"
+              style={{
+                background: "linear-gradient(to right, #1A1916 0%, #1A1916 30%, transparent 100%)"
+              }}
+            />
+            <div
+              className="absolute inset-0 z-10 md:hidden"
+              style={{
+                background: "linear-gradient(to top, #1A1916 0%, #1A1916 50%, transparent 100%)"
+              }}
+            />
+            <img
+              src="/abstract_tech_banner.png"
+              alt=""
+              className="w-full h-full object-cover object-center grayscale opacity-[0.35] mix-blend-screen"
+            />
           </div>
-          <h2 className="mt-3 font-serif text-4xl md:text-6xl lg:text-7xl leading-[1] tracking-tight max-w-4xl">
-            The new math:{" "}
-            <span className="italic text-[#666666]">1 person + AI</span> ={" "}
-            <span className="relative inline-block">
-              total powerhouse
-              <span className="absolute left-0 -bottom-2 h-[3px] w-full bg-[#E63946]" />
-            </span>
-            .
-          </h2>
+
+          <div className="relative z-20 max-w-4xl">
+            <div className="font-mono text-xs uppercase tracking-[0.25em] text-[#FAF8F3]/60 mb-4 flex items-center gap-4">
+              <span className="w-8 h-[1px] bg-[#FAF8F3]/30"></span>
+              Industry insight
+            </div>
+            <h2 className="font-serif text-[clamp(2rem,4.5vw,4.5rem)] leading-[1.1] tracking-tight text-[#FAF8F3]">
+              The new math:{" "}
+              <span className="italic text-[#FAF8F3]/70">1 person + AI</span> ={" "}
+              <span className="relative inline-block mt-1">
+                total powerhouse
+                <span className="absolute left-0 -bottom-2 h-[3px] md:h-[4px] w-full bg-[#15604E] rounded-full" />
+              </span>
+              .
+            </h2>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 mt-16">
@@ -92,12 +121,12 @@ export default function Comparison() {
             <div className="relative z-10">
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#666666]">
                 The exhausting loop{" "}
-                <span className="inline-flex items-center ml-1 px-2 py-0.5 rounded bg-[#111111]/8 text-[#111111] font-semibold">
+                <span className="inline-flex items-center ml-2 px-3 py-1 rounded-md bg-[#1A1916] text-white font-bold text-xs uppercase tracking-widest shadow-sm">
                   you now
                 </span>
               </div>
-              <h3 className="mt-3 font-serif text-3xl md:text-4xl text-[#666666] line-through decoration-[#E63946]/60">
-                Copy. Paste. Repeat.
+              <h3 className="mt-3 font-serif text-3xl md:text-4xl text-[#1A1916] leading-[1.1]">
+                The honest truth.
               </h3>
               <ol className="mt-10 space-y-5">
                 {LOOP.map((s, i) => (
@@ -112,7 +141,7 @@ export default function Comparison() {
                     <span className="font-mono text-xs text-[#999] w-8 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-base md:text-lg text-[#666666]">{s}</span>
+                    <span className="text-sm md:text-base text-[#1A1916]/80 italic leading-relaxed">&quot;{s}&quot;</span>
                   </motion.li>
                 ))}
               </ol>
@@ -131,7 +160,7 @@ export default function Comparison() {
             transition={{ duration: 0.8, ease, delay: 0.15 }}
             whileHover={{ scale: 1.02, y: -4, transition: { duration: 0.3, ease } }}
             data-testid="ai-native-card"
-            className="relative rounded-3xl p-8 md:p-10 bg-white border border-[#E63946]/20 ring-glow shimmer-border overflow-hidden cursor-default transition-shadow duration-300 hover:shadow-[0_25px_60px_-20px_rgba(230,57,70,0.12)]"
+            className="relative rounded-3xl p-8 md:p-10 bg-white border border-[#15604E]/20 ring-glow shimmer-border overflow-hidden cursor-default transition-shadow duration-300 hover:shadow-[0_25px_60px_-20px_rgba(230,57,70,0.12)]"
           >
             {/* Happy man image — right half, faded in from left */}
             <div
@@ -154,9 +183,9 @@ export default function Comparison() {
 
             {/* Text content */}
             <div className="relative z-10">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#E63946]">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#15604E]">
                 The AI-Native System{" "}
-                <span className="inline-flex items-center ml-1 px-2 py-0.5 rounded bg-[#E63946]/10 text-[#E63946] font-semibold">
+                <span className="inline-flex items-center ml-2 px-3 py-1 rounded-md bg-[#15604E] text-white font-bold text-xs uppercase tracking-widest shadow-sm">
                   what you become
                 </span>
               </div>
@@ -183,162 +212,26 @@ export default function Comparison() {
                       </div>
                     </div>
                     <div className="md:col-span-1 flex md:justify-center md:items-center">
-                      <ArrowRight className="w-4 h-4 text-[#E63946]" />
+                      <ArrowRight className="w-4 h-4 text-[#15604E]" />
                     </div>
                     <div className="md:col-span-7">
-                      <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#E63946]">
+                      <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#15604E]">
                         AI-native system
                       </div>
-                      <div className="mt-1 text-[#111111]">{p.next}</div>
+                      <div className="mt-1 text-[#1A1916]">{p.next}</div>
                     </div>
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-10 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#E63946]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E63946] pulse-dot" />
+              <div className="mt-10 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#15604E]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#15604E] pulse-dot" />
                 Output: rested you, scaled
               </div>
             </div>
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease }}
-          className="mt-16 relative overflow-hidden rounded-2xl bg-[#111111] text-[#F4F4F0] p-8 md:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-10"
-        >
-          {/* Animated top edge shine */}
-          <motion.div 
-            animate={{ x: ["-100%", "200%"] }}
-            transition={{ duration: 4, ease: "linear", repeat: Infinity }}
-            className="absolute top-0 left-0 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-[#E63946] to-transparent opacity-80" 
-          />
-          
-          <div className="relative z-10">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#E63946] mb-5 flex items-center gap-2">
-               <span className="w-1.5 h-1.5 rounded-full bg-[#E63946] pulse-dot" /> The shift
-            </div>
-            <p className="font-serif italic text-2xl md:text-4xl text-white/90 leading-tight max-w-3xl">
-              Stop functioning like a machine.<br className="hidden md:block" />
-              <span className="relative inline-block mt-3">
-                <span className="relative z-10 text-white font-normal not-italic px-2">Start directing them.</span>
-                <motion.span 
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-                  className="absolute inset-0 bg-[#E63946] origin-left -skew-x-12 rounded-sm"
-                />
-              </span>
-            </p>
-          </div>
 
-          <div className="relative z-10 flex items-center justify-center w-full lg:w-[350px] shrink-0 h-48 lg:h-auto mt-8 lg:mt-0">
-             <div className="relative w-full max-w-[280px] flex flex-col items-center">
-                
-                {/* DIRECTOR NODE */}
-                <motion.div 
-                  initial={{ y: 10, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-[#E63946] text-white px-5 py-2.5 rounded-xl text-xs font-mono font-bold tracking-widest shadow-[0_0_20px_rgba(230,57,70,0.5)] border border-white/20 flex items-center gap-2 z-20"
-                >
-                  <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                  YOU (DIRECTOR)
-                </motion.div>
-
-                {/* CONNECTING LINES */}
-                <div className="relative w-full h-12 flex justify-center z-10 -my-1">
-                   {/* Main vertical line */}
-                   <div className="w-[2px] h-full bg-gradient-to-b from-[#E63946]/50 to-white/10 relative">
-                     <motion.div 
-                       animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
-                       transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                       className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[12px] bg-[#E63946] rounded-full shadow-[0_0_10px_#E63946]" 
-                     />
-                   </div>
-                   
-                   {/* Horizontal branching line */}
-                   <div className="absolute bottom-0 left-[44px] right-[44px] h-[2px] bg-white/10" />
-                   
-                   {/* Side vertical drops */}
-                   <div className="absolute top-full left-[44px] w-[2px] h-5 bg-white/10">
-                     <motion.div 
-                       animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
-                       transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.4 }}
-                       className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[8px] bg-blue-400 rounded-full shadow-[0_0_8px_#3b82f6]" 
-                     />
-                   </div>
-                   <div className="absolute top-full right-[44px] w-[2px] h-5 bg-white/10">
-                     <motion.div 
-                       animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
-                       transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.8 }}
-                       className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[8px] bg-purple-400 rounded-full shadow-[0_0_8px_#a855f7]" 
-                     />
-                   </div>
-                   <div className="absolute top-full left-1/2 -translate-x-1/2 w-[2px] h-5 bg-white/10">
-                     <motion.div 
-                       animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
-                       transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.6 }}
-                       className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[8px] bg-green-400 rounded-full shadow-[0_0_8px_#22c55e]" 
-                     />
-                   </div>
-                </div>
-
-                {/* AGENT NODES */}
-                <div className="flex justify-between w-full mt-4 z-20 px-6">
-                  {/* Agent 1 */}
-                  <motion.div 
-                    initial={{ y: 10, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="flex flex-col items-center gap-2"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.15)] relative overflow-hidden group">
-                       <div className="absolute inset-0 bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors" />
-                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    </div>
-                    <span className="text-[9px] text-white/50 font-mono tracking-widest">SUPPORT</span>
-                  </motion.div>
-
-                  {/* Agent 2 */}
-                  <motion.div 
-                    initial={{ y: 10, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-col items-center gap-2"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.15)] relative overflow-hidden group">
-                       <div className="absolute inset-0 bg-green-500/10 group-hover:bg-green-500/20 transition-colors" />
-                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-                    </div>
-                    <span className="text-[9px] text-white/50 font-mono tracking-widest">DATA</span>
-                  </motion.div>
-
-                  {/* Agent 3 */}
-                  <motion.div 
-                    initial={{ y: 10, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="flex flex-col items-center gap-2"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.15)] relative overflow-hidden group">
-                       <div className="absolute inset-0 bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors" />
-                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                    </div>
-                    <span className="text-[9px] text-white/50 font-mono tracking-widest">SALES</span>
-                  </motion.div>
-                </div>
-                
-             </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

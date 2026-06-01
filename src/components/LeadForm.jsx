@@ -56,7 +56,7 @@ export default function LeadForm({
     <div
       data-testid={`lead-form-${testIdSuffix}`}
       className={`py-20 md:py-28 overflow-hidden ${
-        isDark ? "bg-transparent text-[#F4F4F0]" : "bg-[#F4F4F0] text-[#111111]"
+        isDark ? "bg-transparent text-[#FAF8F3]" : "bg-[#FAF8F3] text-[#1A1916]"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
@@ -64,7 +64,7 @@ export default function LeadForm({
         {layout === "centered" ? (
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
             <motion.div {...textAnimation} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
-              <div className={`inline-block font-mono text-[10px] uppercase tracking-[0.25em] px-3 py-1 rounded-full mb-6 ${isDark ? "bg-white/5 border border-white/10 text-white/90" : "bg-[#E63946]/10 text-[#E63946]"}`}>
+              <div className={`inline-block font-mono text-[10px] uppercase tracking-[0.25em] px-3 py-1 rounded-full mb-6 ${isDark ? "bg-white/5 border border-white/10 text-white/90" : "bg-[#15604E]/10 text-[#15604E]"}`}>
                 {preTitle}
               </div>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
@@ -73,7 +73,7 @@ export default function LeadForm({
                   {titleHighlight}
                 </span>
               </h2>
-              <p className={`mt-5 text-base md:text-lg leading-relaxed mx-auto max-w-xl ${isDark ? "text-[#F4F4F0]/70" : "text-[#666666]"}`}>
+              <p className={`mt-5 text-base md:text-lg leading-relaxed mx-auto max-w-xl ${isDark ? "text-[#FAF8F3]/70" : "text-[#666666]"}`}>
                 {description}
               </p>
             </motion.div>
@@ -89,22 +89,22 @@ export default function LeadForm({
               {...textAnimation} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className={`lg:col-span-7 ${layout === "split-reverse" ? "lg:order-2" : ""}`}
             >
-              <div className={`font-mono text-xs uppercase tracking-[0.25em] ${isDark ? "text-[#E63946]" : "text-[#E63946]"}`}>
+              <div className={`font-mono text-xs uppercase tracking-[0.25em] ${isDark ? "text-[#15604E]" : "text-[#15604E]"}`}>
                 {preTitle}
               </div>
               <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
                 {title}{" "}
-                <span className={isDark ? "italic text-[#F4F4F0]/60" : "italic text-[#666666]"}>
+                <span className={isDark ? "italic text-[#FAF8F3]/60" : "italic text-[#666666]"}>
                   {titleHighlight}
                 </span>
               </h2>
-              <p className={`mt-5 max-w-xl text-base md:text-lg leading-relaxed ${isDark ? "text-[#F4F4F0]/70" : "text-[#666666]"}`}>
+              <p className={`mt-5 max-w-xl text-base md:text-lg leading-relaxed ${isDark ? "text-[#FAF8F3]/70" : "text-[#666666]"}`}>
                 {description}
               </p>
               <ul className="mt-8 flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-4">
                 {features.map((t) => (
-                  <li key={t} className={`flex items-center gap-2.5 text-sm font-medium ${isDark ? "text-[#F4F4F0]/80" : "text-[#111111]/80"}`}>
-                    <div className={isDark ? "text-[#E63946]" : "text-[#E63946]"}><Check className="w-4 h-4" /></div>
+                  <li key={t} className={`flex items-center gap-2.5 text-sm font-medium ${isDark ? "text-[#FAF8F3]/80" : "text-[#1A1916]/80"}`}>
+                    <div className={isDark ? "text-[#15604E]" : "text-[#15604E]"}><Check className="w-4 h-4" /></div>
                     {t}
                   </li>
                 ))}
@@ -148,7 +148,7 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Name"
-                className={`w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#E63946]/50 transition-all ${
+                className={`w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#15604E]/50 transition-all ${
                   isDark
                     ? "bg-white/5 border-white/10 text-white placeholder-white/40 focus:border-white/20"
                     : "bg-black/5 border-black/10 text-black placeholder-black/20"
@@ -162,7 +162,7 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
                 value={whatsapp}
                 onChange={(e) => setWhatsapp(e.target.value)}
                 placeholder="WhatsApp Number"
-                className={`w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#E63946]/50 transition-all ${
+                className={`w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#15604E]/50 transition-all ${
                   isDark
                     ? "bg-white/5 border-white/10 text-white placeholder-white/40 focus:border-white/20"
                     : "bg-black/5 border-black/10 text-black placeholder-black/20"
@@ -173,7 +173,7 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
               type="submit"
               disabled={submitting}
               className={`w-full group relative flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-medium text-white transition-all overflow-hidden ${
-                submitting ? "bg-gray-500 cursor-not-allowed" : "bg-[#E63946] hover:bg-[#d63541]"
+                submitting ? "bg-gray-500 cursor-not-allowed" : "bg-[#15604E] hover:bg-[#21867a]"
               }`}
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -192,7 +192,7 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
             isDark ? "bg-[#1a1a1a] border-white/10" : "bg-white border-[#DCDCCF]"
           }`}
         >
-          <div className="w-16 h-16 bg-[#E63946]/10 text-[#E63946] rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-[#15604E]/10 text-[#15604E] rounded-full flex items-center justify-center mx-auto mb-6">
             <Check className="w-8 h-8" />
           </div>
           <h3 className="font-serif text-2xl mb-2">Blueprint Unlocked</h3>
