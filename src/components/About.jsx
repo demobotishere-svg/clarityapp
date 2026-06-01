@@ -73,11 +73,11 @@ export default function About() {
                 on the internet.
               </p>
             </div>
-            <div className="mt-12 grid grid-cols-3 gap-4 md:gap-6 border-t border-[#DCDCCF] pt-8">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-[#DCDCCF] pt-8">
               {STATS.map((s) => (
                 <div key={s.k} data-testid="about-stat" className="border-l border-[#DCDCCF] pl-4">
-                  <div className="font-serif text-2xl md:text-3xl italic font-light leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#E63946] via-[#F4A261] to-[#2A9D8F]">{s.k}</div>
-                  <div className="font-mono text-[9px] md:text-[10px] uppercase tracking-widest text-[#666666] mt-2.5 leading-snug">
+                  <div className="font-serif text-3xl italic font-light leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#E63946] via-[#F4A261] to-[#2A9D8F]">{s.k}</div>
+                  <div className="font-mono text-[10px] md:text-[11px] uppercase tracking-widest text-[#666666] mt-2.5 leading-snug">
                     {s.v}
                   </div>
                 </div>
