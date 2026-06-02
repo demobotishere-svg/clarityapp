@@ -43,26 +43,18 @@ export default function GridBackground() {
 
       {/* Floating Nodes */}
       {nodes.map((node) => (
-        <motion.div
+        <div
           key={node.id}
-          className="absolute rounded-full blur-[0.5px]"
+          className="absolute rounded-full animate-float-node"
           style={{
             left: `${node.x}%`,
             top: `${node.y}%`,
             width: node.size,
             height: node.size,
             backgroundColor: node.color,
-            boxShadow: `0 0 6px ${node.color}`
-          }}
-          animate={{
-            y: [0, -40, 0],
-            opacity: [0.15, 0.8, 0.15],
-          }}
-          transition={{
-            duration: node.duration,
-            repeat: Infinity,
-            delay: node.delay,
-            ease: "easeInOut",
+            boxShadow: `0 0 6px ${node.color}`,
+            '--duration': `${node.duration}s`,
+            '--delay': `${node.delay}s`
           }}
         />
       ))}

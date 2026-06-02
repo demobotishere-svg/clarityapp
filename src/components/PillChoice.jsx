@@ -16,7 +16,7 @@ export default function PillChoice() {
     >
       {/* Dynamic Background Glow Aura */}
       <div 
-        className="absolute inset-0 pointer-events-none z-0 blur-[130px] opacity-35 transition-all duration-[800ms] ease-out"
+        className="absolute inset-0 pointer-events-none z-0 opacity-35 transition-all duration-[800ms] ease-out"
         style={{
           background: hoveredIndex === 0 
             ? "radial-gradient(circle at 35% 50%, rgba(58, 123, 213, 0.22) 0%, transparent 65%)" 

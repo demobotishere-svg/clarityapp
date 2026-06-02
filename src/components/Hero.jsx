@@ -41,82 +41,86 @@ export default function Hero() {
       data-testid="hero-section"
       className="relative pt-32 md:pt-40 pb-20 md:pb-28 grain"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mt-8 items-start">
-          <div className="lg:col-span-7 relative">
-            
-            {/* Revolving Background Glows (Intensified) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none -z-10">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 origin-center mix-blend-multiply"
-              >
-                <div className="absolute -top-16 -left-16 w-96 h-96 bg-[#15604E]/20 rounded-full blur-3xl" />
-                <div className="absolute -bottom-16 -right-16 w-96 h-96 bg-[#F4A261]/20 rounded-full blur-3xl" />
-                <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-[#1A1916]/5 rounded-full blur-2xl" />
-              </motion.div>
-            </div>
-
-            {/* Spinning Tech Ring */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[150%] pointer-events-none z-0">
-               <motion.div
-                 animate={{ rotate: -360 }}
-                 transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full border border-[#15604E]/15 border-dashed"
-               />
-               <motion.div
-                 animate={{ rotate: 360 }}
-                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full border border-[#F4A261]/10 border-dotted"
-               />
-            </div>
-
-            {/* Orbiting Particles (More Noticeable) */}
+      {/* Background Effects Container */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[40%] md:top-1/2 left-[50%] md:left-[30%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] max-w-[150vw] max-h-[150vw]">
+          {/* Revolving Background Glows (Intensified) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-0">
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] pointer-events-none z-10"
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 origin-center mix-blend-multiply"
+              style={{ willChange: "transform" }}
             >
-              <motion.div 
-                 animate={{ rotate: -360 }} 
-                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                 className="absolute top-[5%] left-[25%] text-[#15604E]/60 drop-shadow-[0_0_10px_rgba(21,96,78,0.5)]"
-              >
-                <Sparkle size={32} />
-              </motion.div>
-              <motion.div 
-                 animate={{ rotate: -360 }} 
-                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                 className="absolute bottom-[15%] right-[15%] text-[#F4A261]/60 drop-shadow-[0_0_10px_rgba(244,162,97,0.5)]"
-              >
-                <Sparkle size={24} />
-              </motion.div>
-              <motion.div 
-                 animate={{ rotate: -360 }} 
-                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                 className="absolute top-[50%] right-[-10%] flex items-center justify-center"
-              >
-                <div className="w-4 h-4 rounded-full bg-[#15604E]/40 blur-[2px] absolute" />
-                <div className="w-2 h-2 rounded-full bg-[#15604E] shadow-[0_0_15px_#15604E]" />
-              </motion.div>
-              <motion.div 
-                 animate={{ rotate: -360 }} 
-                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                 className="absolute bottom-[-5%] left-[10%] flex items-center justify-center"
-              >
-                <div className="w-3 h-3 rounded-full bg-[#F4A261]/40 blur-[2px] absolute" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#F4A261] shadow-[0_0_10px_#F4A261]" />
-                <div className="w-6 h-6 rounded-full bg-[#F4A261]/60 blur-[6px] absolute" />
-                <div className="w-3 h-3 rounded-full bg-[#F4A261] shadow-[0_0_20px_#F4A261]" />
-              </motion.div>
+              <div className="absolute -top-16 -left-16 w-96 h-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(21,96,78,0.2) 0%, rgba(21,96,78,0) 70%)" }} />
+              <div className="absolute -bottom-16 -right-16 w-96 h-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(244,162,97,0.2) 0%, rgba(244,162,97,0) 70%)" }} />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full" style={{ background: "radial-gradient(circle, rgba(26,25,22,0.05) 0%, rgba(26,25,22,0) 70%)" }} />
             </motion.div>
-            <motion.div
-               animate={{ y: [-5, 5, -5] }}
-               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          </div>
+
+          {/* Spinning Tech Ring */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-0">
+             <motion.div
+               animate={{ rotate: -360 }}
+               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full border border-[#15604E]/15 border-dashed"
+               style={{ willChange: "transform" }}
+             />
+             <motion.div
+               animate={{ rotate: 360 }}
+               transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full border border-[#F4A261]/10 border-dotted"
+               style={{ willChange: "transform" }}
+             />
+          </div>
+
+          {/* Orbiting Particles (More Noticeable) */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-10"
+            style={{ willChange: "transform" }}
+          >
+            <motion.div 
+               animate={{ rotate: -360 }} 
+               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+               className="absolute top-[5%] left-[25%] text-[#15604E]/60 drop-shadow-[0_0_10px_rgba(21,96,78,0.5)]"
             >
+              <Sparkle size={32} />
+            </motion.div>
+            <motion.div 
+               animate={{ rotate: -360 }} 
+               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+               className="absolute bottom-[15%] right-[15%] text-[#F4A261]/60 drop-shadow-[0_0_10px_rgba(244,162,97,0.5)]"
+            >
+              <Sparkle size={24} />
+            </motion.div>
+            <motion.div 
+               animate={{ rotate: -360 }} 
+               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+               className="absolute top-[50%] right-[-10%] flex items-center justify-center"
+            >
+              <div className="w-4 h-4 rounded-full bg-[#15604E]/20 absolute shadow-[0_0_15px_#15604E]" />
+              <div className="w-2 h-2 rounded-full bg-[#15604E] shadow-[0_0_15px_#15604E]" />
+            </motion.div>
+            <motion.div 
+               animate={{ rotate: -360 }} 
+               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+               className="absolute bottom-[-5%] left-[10%] flex items-center justify-center"
+            >
+              <div className="w-3 h-3 rounded-full bg-[#F4A261]/20 absolute shadow-[0_0_20px_#F4A261]" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#F4A261] shadow-[0_0_10px_#F4A261]" />
+              <div className="w-6 h-6 rounded-full bg-[#F4A261]/30 absolute shadow-[0_0_20px_#F4A261]" />
+              <div className="w-3 h-3 rounded-full bg-[#F4A261] shadow-[0_0_20px_#F4A261]" />
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mt-8 items-start">
+          <div className="lg:col-span-7 relative z-10">
+            <div className="animate-float-text">
               <motion.h1
               data-testid="hero-headline"
               variants={containerVariants}
@@ -155,7 +159,7 @@ export default function Hero() {
               })}
               .
             </motion.h1>
-            </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

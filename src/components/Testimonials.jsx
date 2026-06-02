@@ -7,9 +7,9 @@ import { Quote } from "lucide-react";
 // Fake avatar placeholders using UI Faces or similar highly realistic AI faces
 // For now, using standard Unsplash realistic portraits to avoid broken links
 const AVATARS = {
-  agency: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200",
-  ops: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200",
-  founder: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200",
+  agency: "/indian_face_1.png",
+  ops: "/indian_face_2.png",
+  founder: "/indian_face_3.png",
 };
 
 /* ── 100% Real CSS UI Mockups (0% AI generated) ── */
@@ -229,16 +229,18 @@ const CASE_STUDIES = [
     built: "Seedora Plant Community App",
     metric: "Built from scratch by a 9th grader.",
     quote: "Seedora: A plant growing community app which encourages students to grow plants and monitor their growth. Built from scratch.",
-    graphic: <SeedoraMockup />
+    graphic: <SeedoraMockup />,
+    image: "/face_1.png"
   },
   {
     role: "Marketing Executive",
     name: "Ananya Krishnan",
     company: "Ipposales",
-    built: "Independent Sales Chatbot",
+    built: "Sales Chatbot",
     metric: "Zero traditional tech background.",
     quote: "Ipposales: A chatbot built entirely without any traditional tech background.",
-    graphic: <IpposalesMockup />
+    graphic: <IpposalesMockup />,
+    image: "/face_2.png"
   },
   {
     role: "HR Manager",
@@ -247,7 +249,8 @@ const CASE_STUDIES = [
     built: "Employee Onboarding Portal",
     metric: "Built over a single weekend.",
     quote: "Automated a complete employee onboarding portal integrating 4 different HR tools. Built over a weekend with zero coding experience.",
-    graphic: <HRMockup />
+    graphic: <HRMockup />,
+    image: "/face_3.png"
   },
   {
     role: "Local Gym Owner",
@@ -256,7 +259,8 @@ const CASE_STUDIES = [
     built: "Custom Lead Generation Agent",
     metric: "Handles 100% of Instagram DMs.",
     quote: "Custom lead generation agent that handles Instagram DMs, qualifies leads, and books gym trials. I don't know what an API is.",
-    graphic: <GymMockup />
+    graphic: <GymMockup />,
+    image: "/face_4.png"
   },
   {
     role: "Finance Director",
@@ -265,7 +269,8 @@ const CASE_STUDIES = [
     built: "Automated Invoicing System",
     metric: "Eliminated 20 hours of manual data entry.",
     quote: "Built an automated invoicing system that reads our CRM and generates Stripe invoices automatically. I literally didn't write a single line of code.",
-    graphic: <FinanceMockup />
+    graphic: <FinanceMockup />,
+    image: "/face_5.png"
   },
   {
     role: "Content Creator",
@@ -274,7 +279,8 @@ const CASE_STUDIES = [
     built: "Autopilot Content Pipeline",
     metric: "4x increase in weekly publishing output.",
     quote: "My entire content pipeline from ideation to drafting to scheduling across 4 platforms is now handled by my custom agent. Unbelievable.",
-    graphic: <ContentMockup />
+    graphic: <ContentMockup />,
+    image: "/face_6.png"
   }
 ];
 
@@ -330,9 +336,11 @@ export default function Testimonials() {
               &quot;I am going to be hiring people at very high salaries very soon because of their upskilling in AI. I&apos;ve seen people use AI to do the work of 20 people by themselves.&quot;
             </p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-serif text-xl font-bold text-gray-600 shrink-0">
-                SH
-              </div>
+              <img 
+                src="/sharan.jpg" 
+                alt="Sharan Hegde" 
+                className="w-12 h-12 rounded-full object-cover shrink-0 bg-gray-200"
+              />
               <div>
                 <div className="font-semibold text-gray-900">Sharan Hegde</div>
                 <div className="text-sm text-gray-500">Founder, The 1% Club</div>
@@ -350,12 +358,58 @@ export default function Testimonials() {
               &quot;You&apos;re not going to lose your job to an AI. You&apos;re going to lose your job to someone who uses AI.&quot;
             </p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-serif text-xl font-bold text-gray-600 shrink-0">
-                JH
-              </div>
+              <img 
+                src="/jensen.jpg" 
+                alt="Jensen Huang" 
+                className="w-12 h-12 rounded-full object-cover shrink-0 bg-gray-200 object-top"
+              />
               <div>
                 <div className="font-semibold text-gray-900">Jensen Huang</div>
                 <div className="text-sm text-gray-500">CEO, NVIDIA</div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, delay: 0.3 }}
+            className="bg-white border border-[#DCDCCF] rounded-2xl p-8 shadow-sm flex flex-col justify-between"
+          >
+            <p className="font-serif italic text-xl md:text-2xl text-[#1A1916] leading-relaxed mb-8">
+              &quot;AI will be the greatest force for economic empowerment and a lot of people getting rich we have ever seen.&quot;
+            </p>
+            <div className="flex items-center gap-4">
+              <img 
+                src="/sam.jpg" 
+                alt="Sam Altman" 
+                className="w-12 h-12 rounded-full object-cover shrink-0 bg-gray-200 object-top"
+              />
+              <div>
+                <div className="font-semibold text-gray-900">Sam Altman</div>
+                <div className="text-sm text-gray-500">CEO, OpenAI</div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, delay: 0.4 }}
+            className="bg-white border border-[#DCDCCF] rounded-2xl p-8 shadow-sm flex flex-col justify-between"
+          >
+            <p className="font-serif italic text-xl md:text-2xl text-[#1A1916] leading-relaxed mb-8">
+              &quot;AI is a tool to amplify the human mind. The ultimate leverage for the individual builder.&quot;
+            </p>
+            <div className="flex items-center gap-4">
+              <img 
+                src="/naval.jpg" 
+                alt="Naval Ravikant" 
+                className="w-12 h-12 rounded-full object-cover shrink-0 bg-gray-200 object-top"
+              />
+              <div>
+                <div className="font-semibold text-gray-900">Naval Ravikant</div>
+                <div className="text-sm text-gray-500">Founder, AngelList</div>
               </div>
             </div>
           </motion.div>
@@ -406,10 +460,11 @@ export default function Testimonials() {
                 </p>
 
                 <div className="flex items-center gap-3 md:gap-4 mt-auto pt-4 md:pt-8">
-                  <div className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-gradient-to-br from-[#15604E] to-[#ff4d5a] shadow-[0_0_15px_rgba(230,57,70,0.4)] flex items-center justify-center text-white font-serif text-xl md:text-2xl font-semibold relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                    <div className="absolute inset-0 bg-white/20 animate-pulse mix-blend-overlay" />
-                    {study.name.charAt(0)}
-                  </div>
+                  <img 
+                    src={study.image} 
+                    alt={study.name} 
+                    className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full object-cover shadow-[0_0_15px_rgba(0,0,0,0.1)] group-hover:scale-105 transition-transform duration-500 bg-gray-200"
+                  />
                   <div className="min-w-0">
                     <div className={`font-medium truncate text-black`}>{study.name}</div>
                     <div className={`text-sm text-wrap leading-tight mt-0.5 text-black/40`}>
@@ -430,10 +485,8 @@ export default function Testimonials() {
         <div className="absolute left-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-r from-[#FAF8F3] to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-l from-[#FAF8F3] to-transparent z-10" />
         
-        <motion.div 
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
-          className="flex whitespace-nowrap gap-8 pr-8 w-max"
+        <div 
+          className="flex whitespace-nowrap gap-8 pr-8 w-max marquee-track"
         >
           {/* Double the array for seamless loop */}
           {[...MARQUEE_QUOTES, ...MARQUEE_QUOTES].map((q, i) => (
@@ -442,7 +495,7 @@ export default function Testimonials() {
               <span className="text-[#15604E] text-xs">✦</span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
     </section>

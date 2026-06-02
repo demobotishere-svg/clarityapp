@@ -239,3 +239,33 @@ button:focus {
     animation: buttonSweep 4s infinite ease-in-out;
 }
 
+/* Hardware accelerated floating nodes */
+@keyframes floatNode {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.15;
+    }
+    50% {
+        transform: translateY(-40px);
+        opacity: 0.8;
+    }
+}
+.animate-float-node {
+    animation: floatNode var(--duration, 8s) infinite ease-in-out var(--delay, 0s);
+    will-change: transform, opacity;
+}
+
+/* Hardware accelerated floating text */
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+.animate-float-text {
+    animation: floatText 6s infinite ease-in-out;
+    will-change: transform;
+}
+
