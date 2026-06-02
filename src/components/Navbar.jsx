@@ -70,6 +70,41 @@ export default function Navbar() {
     exit: { opacity: 0, y: -8, filter: "blur(4px)", transition: { duration: 0.2 } }
   };
 
+  const handleCTAClick = (e) => {
+    e.preventDefault();
+    const forms = Array.from(document.querySelectorAll('[data-testid^="lead-section-"]'));
+    if (forms.length === 0) {
+      window.location.hash = "#enrol";
+      setOpen(false);
+      return;
+    }
+
+    let nearest = forms[0];
+    let minDistance = Infinity;
+
+    forms.forEach(form => {
+      const rect = form.getBoundingClientRect();
+      const viewportCenter = window.innerHeight / 2;
+      const formCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(formCenter - viewportCenter);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearest = form;
+      }
+    });
+
+    // Scroll gracefully, minus navbar height offset (80px)
+    const elementRect = nearest.getBoundingClientRect().top;
+    const offsetPosition = window.scrollY + elementRect - 80;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+    setOpen(false);
+  };
+
   return (
     <>
       {/* ─── Full-screen mobile overlay (renders BEHIND navbar bar) ─── */}
@@ -123,7 +158,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               href="#enrol"
-              onClick={() => setOpen(false)}
+              onClick={handleCTAClick}
               data-testid="nav-mobile-cta"
               className="mt-6 inline-flex items-center justify-center gap-2 bg-[#15604E] text-white px-6 py-4 rounded-full text-sm font-medium button-sweep-effect w-full shadow-lg hover:bg-[#1B7560] transition-colors duration-300"
             >
@@ -193,6 +228,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <a
             href="#enrol"
+            onClick={handleCTAClick}
             data-testid="nav-cta-button"
             className="hidden md:inline-flex items-center gap-2 bg-[#15604E] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1B7560] transition-colors duration-300 button-sweep-effect shrink-0 shadow-sm hover:shadow"
           >

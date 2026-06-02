@@ -18,7 +18,9 @@ export default function LeadForm({
     "Instant WhatsApp access"
   ],
   buttonText = "Send me the 15-min blueprint",
-  layout = "standard" // standard, centered, split-reverse
+  layout = "standard", // standard, centered, split-reverse
+  formTitle = "Ready to take",
+  formTitleHighlight = "the next step?"
 }) {
   const [name, setName] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -79,7 +81,7 @@ export default function LeadForm({
             </motion.div>
             
             <motion.div {...formAnimation} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }} className="w-full max-w-md mt-12">
-              <FormBox done={done} onSubmit={onSubmit} name={name} setName={setName} whatsapp={whatsapp} setWhatsapp={setWhatsapp} submitting={submitting} isDark={isDark} buttonText={buttonText} />
+              <FormBox done={done} onSubmit={onSubmit} name={name} setName={setName} whatsapp={whatsapp} setWhatsapp={setWhatsapp} submitting={submitting} isDark={isDark} buttonText={buttonText} formTitle={formTitle} formTitleHighlight={formTitleHighlight} />
             </motion.div>
           </div>
         ) : (
@@ -115,7 +117,7 @@ export default function LeadForm({
               {...formAnimation} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className={`lg:col-span-5 ${layout === "split-reverse" ? "lg:order-1" : ""}`}
             >
-              <FormBox done={done} onSubmit={onSubmit} name={name} setName={setName} whatsapp={whatsapp} setWhatsapp={setWhatsapp} submitting={submitting} isDark={isDark} buttonText={buttonText} />
+              <FormBox done={done} onSubmit={onSubmit} name={name} setName={setName} whatsapp={whatsapp} setWhatsapp={setWhatsapp} submitting={submitting} isDark={isDark} buttonText={buttonText} formTitle={formTitle} formTitleHighlight={formTitleHighlight} />
             </motion.div>
 
           </div>
@@ -125,7 +127,7 @@ export default function LeadForm({
   );
 }
 
-function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitting, isDark, buttonText }) {
+function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitting, isDark, buttonText, formTitle, formTitleHighlight }) {
   return (
     <AnimatePresence mode="wait">
       {!done ? (
@@ -141,6 +143,16 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
           }`}
         >
           <div className="space-y-4">
+            {(formTitle || formTitleHighlight) && (
+              <h4 className={`font-serif text-2xl md:text-3xl leading-tight tracking-tight mb-6 text-center ${isDark ? "text-[#FAF8F3]" : "text-[#1A1916]"}`}>
+                {formTitle}{" "}
+                {formTitleHighlight && (
+                  <span className={`italic ${isDark ? "text-white/70" : "text-[#15604E]"}`}>
+                    {formTitleHighlight}
+                  </span>
+                )}
+              </h4>
+            )}
             <div>
               <input
                 type="text"

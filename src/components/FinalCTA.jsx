@@ -20,10 +20,10 @@ export default function FinalCTA() {
           </h2>
           
           <a 
-            href="#enrol"
+            href="#lead-form-final"
             className="group inline-flex items-center justify-center gap-3 bg-[#15604E] text-white px-9 py-4 rounded-xl font-semibold text-lg hover:bg-[#21867a] hover:-translate-y-1 transition-all shadow-[0_12px_28px_rgba(42,157,143,0.25)]"
           >
-            Reserve your seat — ₹5,000
+            Unlock Now
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>

@@ -312,7 +312,7 @@ export default function Testimonials() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-[#666666] mb-4">
+          <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#666666] mb-4">
             This is already happening
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">

@@ -41,6 +41,8 @@ export default function Home() {
             testIdSuffix="1" 
             layout="split-reverse"
             preTitle="15 MINUTES TO PARADIGM SHIFT"
+            formTitle="Ready to take"
+            formTitleHighlight="the next step?"
             title="15 minutes of pure"
             titleHighlight="signal."
             description="Forget generic courses. Get the exact architectural blueprint to build an AI-Native system in a 15-minute high-density breakdown."
@@ -63,6 +65,8 @@ export default function Home() {
             testIdSuffix="2" 
             layout="centered"
             preTitle="THE 15-MINUTE SYSTEM BUILDER"
+            formTitle="Ready to build"
+            formTitleHighlight="your first system?"
             title="Give us 15 minutes."
             titleHighlight="We'll give you a system."
             description="Watch the exact blueprint our students used to reclaim 20+ hours a week. No fluff, just practical execution."
@@ -85,6 +89,8 @@ export default function Home() {
             testIdSuffix="3" 
             layout="standard"
             preTitle="PURE SIGNAL. ZERO NOISE."
+            formTitle="Ready for"
+            formTitleHighlight="your transformation?"
             title="15 minutes can"
             titleHighlight="transform you."
             description="We compressed 6 years of AI production experience into a 15-minute tactical breakdown. You will leave with a deployable architecture."
@@ -103,6 +109,8 @@ export default function Home() {
             testIdSuffix="4" 
             layout="split-reverse"
             preTitle="YOUR 15-MINUTE TRANSFORMATION"
+            formTitle="Ready to claim"
+            formTitleHighlight="your time back?"
             title="Stop wasting time."
             titleHighlight="See the blueprint."
             description="Most people spend weeks trying to learn AI. You just need 15 minutes to see how to actually build and deploy autonomous workflows."
@@ -116,6 +124,22 @@ export default function Home() {
         </ScrollReveal>
 
         <FinalCTA />
+
+        <section id="lead-form-final" data-testid="lead-section-5" className="border-t border-[#DCDCCF] bg-[#FAF8F3]">
+          <LeadForm 
+            variant="primary" 
+            testIdSuffix="5" 
+            layout="standard"
+            preTitle="THE ARCHITECT'S BLUEPRINT"
+            formTitle="Ready to become"
+            formTitleHighlight="the architect?"
+            title="Your final chance to"
+            titleHighlight="take the red pill."
+            description="The paradigm is shifting. Enter your details to get the 15-minute breakdown delivered straight to your WhatsApp."
+            features={["Zero commitment", "Instant WhatsApp delivery", "15-minute blueprint"]}
+            buttonText="Unlock the 15-min blueprint"
+          />
+        </section>
 
         <Footer />
       </motion.div>
