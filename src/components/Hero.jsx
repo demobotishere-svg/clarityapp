@@ -46,74 +46,54 @@ export default function Hero() {
         <div className="absolute top-[40%] md:top-1/2 left-[50%] md:left-[30%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] max-w-[150vw] max-h-[150vw]">
           {/* Revolving Background Glows (Intensified) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-0">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 origin-center mix-blend-multiply"
-              style={{ willChange: "transform" }}
+            <div
+              className="absolute inset-0 origin-center mix-blend-multiply animate-spin-20"
             >
               <div className="absolute -top-16 -left-16 w-96 h-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(21,96,78,0.2) 0%, rgba(21,96,78,0) 70%)" }} />
               <div className="absolute -bottom-16 -right-16 w-96 h-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(244,162,97,0.2) 0%, rgba(244,162,97,0) 70%)" }} />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full" style={{ background: "radial-gradient(circle, rgba(26,25,22,0.05) 0%, rgba(26,25,22,0) 70%)" }} />
-            </motion.div>
+            </div>
           </div>
 
           {/* Spinning Tech Ring */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-0">
-             <motion.div
-               animate={{ rotate: -360 }}
-               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full border border-[#15604E]/15 border-dashed"
-               style={{ willChange: "transform" }}
+             <div
+               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full border border-[#15604E]/15 border-dashed animate-spin-reverse-60"
              />
-             <motion.div
-               animate={{ rotate: 360 }}
-               transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full border border-[#F4A261]/10 border-dotted"
-               style={{ willChange: "transform" }}
+             <div
+               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full border border-[#F4A261]/10 border-dotted animate-spin-40"
              />
           </div>
 
           {/* Orbiting Particles (More Noticeable) */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-10"
-            style={{ willChange: "transform" }}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-10 animate-spin-30"
           >
-            <motion.div 
-               animate={{ rotate: -360 }} 
-               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-               className="absolute top-[5%] left-[25%] text-[#15604E]/60 drop-shadow-[0_0_10px_rgba(21,96,78,0.5)]"
+            <div 
+               className="absolute top-[5%] left-[25%] text-[#15604E]/60 drop-shadow-[0_0_10px_rgba(21,96,78,0.5)] animate-spin-reverse-30"
             >
               <Sparkle size={32} />
-            </motion.div>
-            <motion.div 
-               animate={{ rotate: -360 }} 
-               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-               className="absolute bottom-[15%] right-[15%] text-[#F4A261]/60 drop-shadow-[0_0_10px_rgba(244,162,97,0.5)]"
+            </div>
+            <div 
+               className="absolute bottom-[15%] right-[15%] text-[#F4A261]/60 drop-shadow-[0_0_10px_rgba(244,162,97,0.5)] animate-spin-reverse-30"
             >
               <Sparkle size={24} />
-            </motion.div>
-            <motion.div 
-               animate={{ rotate: -360 }} 
-               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-               className="absolute top-[50%] right-[-10%] flex items-center justify-center"
+            </div>
+            <div 
+               className="absolute top-[50%] right-[-10%] flex items-center justify-center animate-spin-reverse-30"
             >
               <div className="w-4 h-4 rounded-full bg-[#15604E]/20 absolute shadow-[0_0_15px_#15604E]" />
               <div className="w-2 h-2 rounded-full bg-[#15604E] shadow-[0_0_15px_#15604E]" />
-            </motion.div>
-            <motion.div 
-               animate={{ rotate: -360 }} 
-               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-               className="absolute bottom-[-5%] left-[10%] flex items-center justify-center"
+            </div>
+            <div 
+               className="absolute bottom-[-5%] left-[10%] flex items-center justify-center animate-spin-reverse-30"
             >
               <div className="w-3 h-3 rounded-full bg-[#F4A261]/20 absolute shadow-[0_0_20px_#F4A261]" />
               <div className="w-1.5 h-1.5 rounded-full bg-[#F4A261] shadow-[0_0_10px_#F4A261]" />
               <div className="w-6 h-6 rounded-full bg-[#F4A261]/30 absolute shadow-[0_0_20px_#F4A261]" />
               <div className="w-3 h-3 rounded-full bg-[#F4A261] shadow-[0_0_20px_#F4A261]" />
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -241,10 +221,8 @@ export default function Hero() {
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-[9px] font-mono tracking-[0.25em] text-[#666666]/60 uppercase hidden md:flex select-none">
         <span>scroll</span>
         <div className="w-[12px] h-[20px] rounded-full border border-[#DCDCCF] flex justify-center p-[2px]">
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-1 rounded-full bg-[#15604E]"
+          <div
+            className="w-1 h-1 rounded-full bg-[#15604E] animate-scroll-bounce"
           />
         </div>
       </div>

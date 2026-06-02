@@ -269,3 +269,20 @@ button:focus {
     will-change: transform;
 }
 
+/* Hardware accelerated infinite spins */
+@keyframes spinHero { 100% { transform: rotate(360deg); } }
+@keyframes spinHeroReverse { 100% { transform: rotate(-360deg); } }
+
+.animate-spin-20 { animation: spinHero 20s linear infinite; will-change: transform; }
+.animate-spin-30 { animation: spinHero 30s linear infinite; will-change: transform; }
+.animate-spin-40 { animation: spinHero 40s linear infinite; will-change: transform; }
+.animate-spin-60 { animation: spinHero 60s linear infinite; will-change: transform; }
+.animate-spin-reverse-30 { animation: spinHeroReverse 30s linear infinite; will-change: transform; }
+.animate-spin-reverse-60 { animation: spinHeroReverse 60s linear infinite; will-change: transform; }
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+.animate-scroll-bounce { animation: scrollBounce 1.5s infinite ease-in-out; will-change: transform; }
+
