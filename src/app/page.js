@@ -7,7 +7,6 @@ import Hero from "@/components/Hero";
 import LeadForm from "@/components/LeadForm";
 import Comparison from "@/components/Comparison";
 import Architect from "@/components/Architect";
-import WorkingSystems from "@/components/WorkingSystems";
 import Audience from "@/components/Audience";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
@@ -56,10 +55,6 @@ export default function Home() {
 
         <ScrollReveal>
           <Architect />
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <WorkingSystems />
         </ScrollReveal>
 
         <section data-testid="lead-section-2" className="border-t border-[#white/10] bg-[#1A1916]">

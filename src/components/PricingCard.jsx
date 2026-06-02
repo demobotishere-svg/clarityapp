@@ -24,9 +24,6 @@ export default function PricingCard() {
           <span className="font-serif text-5xl md:text-[3.5rem] leading-none text-[#1A1916]">5,000</span>
           <span className="text-sm text-[#666666] font-medium ml-1 whitespace-nowrap">one-time</span>
         </div>
-        <div className="bg-[#15604E]/10 text-[#15604E] px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase whitespace-nowrap w-fit">
-          Cohort 01
-        </div>
       </div>
 
       <div className="flex flex-col gap-2 mb-6">
@@ -50,8 +47,8 @@ export default function PricingCard() {
         Reserve your seat <span className="text-xl leading-none transition-transform group-hover:translate-x-1">→</span>
       </a>
 
-      <div className="text-center text-xs md:text-sm text-[#999999] font-medium">
-        No payment today · full refund after Weekend 1
+      <div className="text-center text-xs md:text-sm text-[#666666] font-medium mt-3">
+        No payment today · full refund if you dont like it
       </div>
     </motion.div>
   );

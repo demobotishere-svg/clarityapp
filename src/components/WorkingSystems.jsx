@@ -72,7 +72,7 @@ export default function WorkingSystems() {
               </div>
             </div>
             <div className="p-8 lg:p-10 flex-1 flex flex-col">
-              <div className="text-[10px] font-mono tracking-[0.2em] text-[#3b82f6] uppercase font-bold mb-4">
+              <div className="text-sm md:text-base font-extrabold font-mono tracking-[0.2em] text-[#3b82f6] uppercase font-bold mb-4">
                 WEEK 2 · FLAGSHIP BUILD
               </div>
               <h3 className="font-serif text-2xl text-[#1A1916] mb-3">An automation pipeline</h3>
@@ -125,7 +125,7 @@ export default function WorkingSystems() {
               </motion.div>
             </div>
             <div className="p-8 lg:p-10 flex-1 flex flex-col">
-              <div className="text-[10px] font-mono tracking-[0.2em] text-[#3b82f6] uppercase font-bold mb-4">
+              <div className="text-sm md:text-base font-extrabold font-mono tracking-[0.2em] text-[#3b82f6] uppercase font-bold mb-4">
                 WEEK 3 · DEPLOY LIVE
               </div>
               <h3 className="font-serif text-2xl text-[#1A1916] mb-3">A custom AI chatbot</h3>
@@ -158,7 +158,7 @@ export default function WorkingSystems() {
               </div>
             </div>
             <div className="p-8 lg:p-10 flex-1 flex flex-col">
-              <div className="text-[10px] font-mono tracking-[0.2em] text-[#3b82f6] uppercase font-bold mb-4">
+              <div className="text-sm md:text-base font-extrabold font-mono tracking-[0.2em] text-[#3b82f6] uppercase font-bold mb-4">
                 WEEK 3 · YOUR STUDIO
               </div>
               <h3 className="font-serif text-2xl text-[#1A1916] mb-3">A content & media engine</h3>

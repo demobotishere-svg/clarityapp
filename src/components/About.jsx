@@ -35,7 +35,7 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1916]/40 via-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6 text-[#FAF8F3]">
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#FAF8F3]/70">
+                <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#FAF8F3]/70">
                   Instructor
                 </div>
                 <div className="font-serif text-3xl mt-1">Ships AI, not slides.</div>
@@ -77,7 +77,7 @@ export default function About() {
               {STATS.map((s) => (
                 <div key={s.k} data-testid="about-stat" className="border-l border-[#DCDCCF] pl-4">
                   <div className="font-serif text-3xl italic font-light leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#15604E] via-[#F4A261] to-[#15604E]">{s.k}</div>
-                  <div className="font-mono text-[10px] md:text-[11px] uppercase tracking-widest text-[#666666] mt-2.5 leading-snug">
+                  <div className="font-mono text-sm md:text-base font-extrabold md:text-[11px] uppercase tracking-widest text-[#666666] mt-2.5 leading-snug">
                     {s.v}
                   </div>
                 </div>

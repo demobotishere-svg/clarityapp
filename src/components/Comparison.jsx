@@ -95,7 +95,7 @@ export default function Comparison() {
             transition={{ duration: 0.8, ease }}
             whileHover={{ scale: 1.01, y: -2, transition: { duration: 0.3, ease } }}
             data-testid="exhausting-loop-card"
-            className="relative rounded-3xl p-8 md:p-10 bg-[#EAEAE6] border border-[#DCDCCF] transition-shadow hover:shadow-md cursor-default overflow-hidden"
+            className="relative rounded-3xl p-8 md:p-10 bg-red-50/80 border-[4px] border-red-600 shadow-[0_0_40px_rgba(220,38,38,0.3)] transition-shadow hover:shadow-[0_0_50px_rgba(220,38,38,0.5)] cursor-default overflow-hidden"
           >
             {/* Frustrated man image — right half, faded in from the left */}
             <div
@@ -106,7 +106,7 @@ export default function Comparison() {
               <div
                 className="absolute inset-0 z-10"
                 style={{
-                  background: "linear-gradient(to right, #EAEAE6 0%, #EAEAE6 10%, transparent 55%)"
+                  background: "linear-gradient(to right, #fef2f2 0%, #fef2f2 10%, transparent 55%)"
                 }}
               />
               <img
@@ -119,9 +119,9 @@ export default function Comparison() {
 
             {/* Text content — left half, always on top */}
             <div className="relative z-10">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#666666]">
+              <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-red-800/70">
                 The exhausting loop{" "}
-                <span className="inline-flex items-center ml-2 px-3 py-1 rounded-md bg-[#1A1916] text-white font-bold text-xs uppercase tracking-widest shadow-sm">
+                <span className="inline-flex items-center ml-2 px-3 py-1 rounded-md bg-red-600 text-white font-bold text-xs uppercase tracking-widest shadow-sm">
                   you now
                 </span>
               </div>
@@ -138,15 +138,15 @@ export default function Comparison() {
                     transition={{ duration: 0.5, delay: i * 0.1, ease }}
                     className="flex items-center gap-4"
                   >
-                    <span className="font-mono text-xs text-[#999] w-8 shrink-0">
+                    <span className="font-mono text-xs text-red-500/60 font-bold w-8 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="text-sm md:text-base text-[#1A1916]/80 italic leading-relaxed">&quot;{s}&quot;</span>
                   </motion.li>
                 ))}
               </ol>
-              <div className="mt-10 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#666666]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#999]" />
+              <div className="mt-10 inline-flex items-center gap-2 font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-red-700/80">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" />
                 Output: tired you
               </div>
             </div>
@@ -183,7 +183,7 @@ export default function Comparison() {
 
             {/* Text content */}
             <div className="relative z-10">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#15604E]">
+              <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#15604E]">
                 The AI-Native System{" "}
                 <span className="inline-flex items-center ml-2 px-3 py-1 rounded-md bg-[#15604E] text-white font-bold text-xs uppercase tracking-widest shadow-sm">
                   what you become
@@ -204,7 +204,7 @@ export default function Comparison() {
                     className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-5 border-t border-[#DCDCCF] pt-5"
                   >
                     <div className="md:col-span-4">
-                      <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#666666]">
+                      <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#666666]">
                         Old way
                       </div>
                       <div className="text-[#666666] line-through decoration-[#666666]/30 mt-1">
@@ -215,7 +215,7 @@ export default function Comparison() {
                       <ArrowRight className="w-4 h-4 text-[#15604E]" />
                     </div>
                     <div className="md:col-span-7">
-                      <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#15604E]">
+                      <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#15604E]">
                         AI-native system
                       </div>
                       <div className="mt-1 text-[#1A1916]">{p.next}</div>
@@ -223,7 +223,7 @@ export default function Comparison() {
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-10 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#15604E]">
+              <div className="mt-10 inline-flex items-center gap-2 font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#15604E]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#15604E] pulse-dot" />
                 Output: rested you, scaled
               </div>

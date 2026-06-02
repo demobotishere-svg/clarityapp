@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-6">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#FAF8F3]/40">
+            <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#FAF8F3]/40">
               Navigate
             </div>
             <ul className="mt-3 space-y-2 text-sm">
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-white/10 pt-6 font-mono text-[10px] uppercase tracking-[0.25em] text-[#FAF8F3]/40">
+        <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-white/10 pt-6 font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#FAF8F3]/40">
           <div>© 2026 AI-Native Thinking.</div>
           <div>Crafted in clarity, not clutter.</div>
         </div>

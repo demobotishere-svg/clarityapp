@@ -77,7 +77,7 @@ export default function Architect() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-          className="text-base md:text-[17px] text-[#78726A] font-light leading-relaxed max-w-2xl mx-auto"
+          className="text-lg md:text-[20px] text-[#1A1916] font-medium leading-relaxed max-w-3xl mx-auto"
         >
           It produces anything you ask. It cannot decide what&apos;s worth producing, why it matters, or how the pieces fit. That judgment is yours — it always has been. This course makes you the architect, and turns AI into the team you never had.
         </motion.p>

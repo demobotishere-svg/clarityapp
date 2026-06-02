@@ -64,7 +64,7 @@ export default function LeadForm({
         {layout === "centered" ? (
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
             <motion.div {...textAnimation} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
-              <div className={`inline-block font-mono text-[10px] uppercase tracking-[0.25em] px-3 py-1 rounded-full mb-6 ${isDark ? "bg-white/5 border border-white/10 text-white/90" : "bg-[#15604E]/10 text-[#15604E]"}`}>
+              <div className={`inline-block font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] px-3 py-1 rounded-full mb-6 ${isDark ? "bg-white/5 border border-white/10 text-white/90" : "bg-[#15604E]/10 text-[#15604E]"}`}>
                 {preTitle}
               </div>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
@@ -89,7 +89,7 @@ export default function LeadForm({
               {...textAnimation} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className={`lg:col-span-7 ${layout === "split-reverse" ? "lg:order-2" : ""}`}
             >
-              <div className={`font-mono text-xs uppercase tracking-[0.25em] ${isDark ? "text-[#15604E]" : "text-[#15604E]"}`}>
+              <div className={`font-mono text-base md:text-lg font-extrabold uppercase tracking-[0.25em] ${isDark ? "text-[#15604E]" : "text-[#15604E]"}`}>
                 {preTitle}
               </div>
               <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">

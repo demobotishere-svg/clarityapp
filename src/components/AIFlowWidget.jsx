@@ -20,7 +20,7 @@ export default function TimeAuditWidget() {
     <div className="w-full rounded-2xl border border-[#DCDCCF] bg-white ring-glow shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-shadow hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] flex flex-col h-full">
       {/* Header */}
       <div className="px-5 py-5 border-b border-[#DCDCCF] bg-gradient-to-b from-[#F8F8F4] to-white rounded-t-2xl">
-        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#666666]">
+        <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.2em] text-[#666666]">
           Your week · hours spent
         </div>
         <div className="font-serif text-xl md:text-2xl mt-1 text-[#1A1916]">Time Audit</div>
@@ -40,7 +40,7 @@ export default function TimeAuditWidget() {
               <div className="flex flex-col gap-3">
                 {/* Before AI Bar */}
                 <div className="flex items-center gap-3">
-                  <div className="w-[65px] text-[10px] font-mono tracking-wider uppercase text-[#15604E]">Before</div>
+                  <div className="w-[65px] text-sm md:text-base font-extrabold font-mono tracking-wider uppercase text-[#15604E]">Before</div>
                   <div className="flex-1 h-1.5 rounded-full bg-[#EAEAE6]">
                     <motion.div
                       initial={{ width: 0 }}
@@ -55,7 +55,7 @@ export default function TimeAuditWidget() {
 
                 {/* After AI Bar */}
                 <div className="flex items-center gap-3">
-                  <div className="w-[65px] text-[10px] font-mono tracking-wider uppercase text-[#15604E]">After AI</div>
+                  <div className="w-[65px] text-sm md:text-base font-extrabold font-mono tracking-wider uppercase text-[#15604E]">After AI</div>
                   <div className="flex-1 h-1.5 rounded-full bg-[#EAEAE6]">
                     <motion.div
                       initial={{ width: 0 }}
@@ -76,7 +76,7 @@ export default function TimeAuditWidget() {
       {/* Summary footer */}
       <div className="flex items-center justify-between px-5 py-6 border-t border-[#DCDCCF] bg-[#F8F8F4] rounded-b-2xl">
         <div>
-           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#666666]">
+           <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.2em] text-[#666666]">
              Total hours reclaimed
            </div>
            <div className="font-serif text-3xl md:text-4xl text-[#15604E] mt-1">
@@ -84,7 +84,7 @@ export default function TimeAuditWidget() {
            </div>
         </div>
         <div className="text-right">
-           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#666666]">
+           <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.2em] text-[#666666]">
              New weekly load
            </div>
            <div className="font-serif text-xl md:text-2xl text-[#1A1916] mt-1">

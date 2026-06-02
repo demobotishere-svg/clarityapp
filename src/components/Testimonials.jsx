@@ -142,7 +142,7 @@ function GymMockup() {
              ))}
           </div>
           <div className="flex flex-col gap-2 mt-auto">
-             <div className="text-white/40 text-[10px] uppercase tracking-wider">Latest Automations</div>
+             <div className="text-white/40 text-sm md:text-base font-extrabold uppercase tracking-wider">Latest Automations</div>
              <div className="bg-white/5 border border-white/10 rounded-lg p-2 flex justify-between items-center">
                 <div className="flex items-center gap-2">
                    <div className="w-2 h-2 rounded-full bg-[#15604E]" />
@@ -325,97 +325,82 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Leader Quotes */}
-        <div className="max-w-4xl mx-auto mb-24 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white border border-[#DCDCCF] rounded-2xl p-8 shadow-sm flex flex-col justify-between"
-          >
-            <p className="font-serif italic text-xl md:text-2xl text-[#1A1916] leading-relaxed mb-8">
-              &quot;I am going to be hiring people at very high salaries very soon because of their upskilling in AI. I&apos;ve seen people use AI to do the work of 20 people by themselves.&quot;
-            </p>
-            <div className="flex items-center gap-4">
-              <img 
-                src="/sharan.jpg" 
-                alt="Sharan Hegde" 
-                className="w-12 h-12 rounded-full object-cover shrink-0 bg-gray-200"
-              />
-              <div>
-                <div className="font-semibold text-gray-900">Sharan Hegde</div>
-                <div className="text-sm text-gray-500">Founder, The 1% Club</div>
+        <div className="max-w-6xl mx-auto mb-24 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 text-left">
+          {[
+            {
+              name: "Sharan Hegde",
+              role: "Founder, The 1% Club",
+              quote: "I am going to be hiring people at very high salaries very soon because of their upskilling in AI. I've seen people use AI to do the work of 20 people by themselves.",
+              image: "/sharan.jpg"
+            },
+            {
+              name: "Jensen Huang",
+              role: "CEO, NVIDIA",
+              quote: "You're not going to lose your job to an AI. You're going to lose your job to someone who uses AI.",
+              image: "/jensen.jpg"
+            },
+            {
+              name: "Sam Altman",
+              role: "CEO, OpenAI",
+              quote: "AI will be the greatest force for economic empowerment and a lot of people getting rich we have ever seen.",
+              image: "/sam.jpg"
+            },
+            {
+              name: "Naval Ravikant",
+              role: "Founder, AngelList",
+              quote: "AI is a tool to amplify the human mind. The ultimate leverage for the individual builder.",
+              image: "/naval.jpg"
+            }
+          ].map((leader, i) => (
+            <motion.div 
+              key={leader.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, delay: i * 0.1 }}
+              className="relative overflow-hidden bg-[#1A1916] rounded-[2rem] p-6 sm:p-8 md:p-10 shadow-xl flex items-center min-h-[300px] border border-white/5"
+            >
+              {/* Faded Background Image - Left Side */}
+              <div className="absolute inset-y-0 left-0 w-[55%] sm:w-[45%] pointer-events-none" aria-hidden="true">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#1A1916] z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#1A1916]/30 via-transparent to-[#1A1916]/80 z-10" />
+                <img 
+                  src={leader.image} 
+                  alt="" 
+                  className="w-full h-full object-cover object-top grayscale mix-blend-lighten opacity-[0.95]"
+                />
               </div>
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, delay: 0.2 }}
-            className="bg-white border border-[#DCDCCF] rounded-2xl p-8 shadow-sm flex flex-col justify-between"
-          >
-            <p className="font-serif italic text-xl md:text-2xl text-[#1A1916] leading-relaxed mb-8">
-              &quot;You&apos;re not going to lose your job to an AI. You&apos;re going to lose your job to someone who uses AI.&quot;
-            </p>
-            <div className="flex items-center gap-4">
-              <img 
-                src="/jensen.jpg" 
-                alt="Jensen Huang" 
-                className="w-12 h-12 rounded-full object-cover shrink-0 bg-gray-200 object-top"
-              />
-              <div>
-                <div className="font-semibold text-gray-900">Jensen Huang</div>
-                <div className="text-sm text-gray-500">CEO, NVIDIA</div>
-              </div>
-            </div>
-          </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, delay: 0.3 }}
-            className="bg-white border border-[#DCDCCF] rounded-2xl p-8 shadow-sm flex flex-col justify-between"
-          >
-            <p className="font-serif italic text-xl md:text-2xl text-[#1A1916] leading-relaxed mb-8">
-              &quot;AI will be the greatest force for economic empowerment and a lot of people getting rich we have ever seen.&quot;
-            </p>
-            <div className="flex items-center gap-4">
-              <img 
-                src="/sam.jpg" 
-                alt="Sam Altman" 
-                className="w-12 h-12 rounded-full object-cover shrink-0 bg-gray-200 object-top"
-              />
-              <div>
-                <div className="font-semibold text-gray-900">Sam Altman</div>
-                <div className="text-sm text-gray-500">CEO, OpenAI</div>
+              {/* Content - Right Side */}
+              <div className="relative z-20 w-[60%] ml-auto flex flex-col justify-center">
+                <p className="font-serif italic text-base sm:text-lg md:text-[20px] text-[#FAF8F3] leading-relaxed mb-6 drop-shadow-md">
+                  &quot;{leader.quote}&quot;
+                </p>
+                <div>
+                  <div className="font-semibold text-white tracking-wide">{leader.name}</div>
+                  <div className="text-xs sm:text-sm text-[#FAF8F3]/60 font-mono tracking-widest uppercase mt-1">{leader.role}</div>
+                </div>
               </div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, delay: 0.4 }}
-            className="bg-white border border-[#DCDCCF] rounded-2xl p-8 shadow-sm flex flex-col justify-between"
-          >
-            <p className="font-serif italic text-xl md:text-2xl text-[#1A1916] leading-relaxed mb-8">
-              &quot;AI is a tool to amplify the human mind. The ultimate leverage for the individual builder.&quot;
-            </p>
-            <div className="flex items-center gap-4">
-              <img 
-                src="/naval.jpg" 
-                alt="Naval Ravikant" 
-                className="w-12 h-12 rounded-full object-cover shrink-0 bg-gray-200 object-top"
-              />
-              <div>
-                <div className="font-semibold text-gray-900">Naval Ravikant</div>
-                <div className="text-sm text-gray-500">Founder, AngelList</div>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Featured Case Studies */}
+        <div className="text-center mb-20 md:mb-28 max-w-4xl mx-auto px-4">
+          <div className="font-mono text-xs md:text-sm uppercase tracking-[0.25em] text-[#15604E] font-bold mb-6 flex items-center justify-center gap-4">
+            <span className="w-8 md:w-12 h-[1px] bg-[#15604E]/30"></span>
+            Proof of Work
+            <span className="w-8 md:w-12 h-[1px] bg-[#15604E]/30"></span>
+          </div>
+          <h3 className="font-serif text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] tracking-tight text-[#1A1916]">
+            See what our <span className="italic text-[#15604E] relative inline-block">
+              alumni built.
+              <span className="absolute left-0 -bottom-2 md:-bottom-3 h-[3px] md:h-[5px] w-full bg-[#F4A261] rounded-full opacity-80" />
+            </span>
+          </h3>
+          <p className="mt-6 md:mt-8 text-lg md:text-xl text-[#666666] max-w-2xl mx-auto font-medium leading-relaxed">
+            These aren't theoretical projects. They are live, autonomous systems deployed by people who had absolutely zero coding experience before joining.
+          </p>
+        </div>
         <div className="space-y-12 md:space-y-24">
           {CASE_STUDIES.map((study, idx) => (
             <motion.div 
@@ -434,7 +419,7 @@ export default function Testimonials() {
               <div className={`py-8 lg:py-0 min-h-[250px] lg:min-h-full border-b lg:border-b-0 lg:border-r relative overflow-hidden flex flex-col justify-center ${idx % 2 === 0 ? "bg-[#fcfcfc] border-[#DCDCCF]" : "bg-[#F9F9F6] border-[#DCDCCF]"}`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#15604E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
                 <div className={`absolute top-4 left-4 md:top-6 md:left-6 z-10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-xl border shadow-sm ${idx % 2 === 0 ? "bg-white/90 border-black/5" : "bg-white/70 border-black/5"}`}>
-                  <div className={`font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-black/50`}>Built System</div>
+                  <div className={`font-mono text-sm md:text-base font-extrabold md:text-xs uppercase tracking-[0.2em] font-semibold text-black/50`}>Alumni Showcase</div>
                   <div className={`text-sm md:text-base mt-0.5 font-bold text-black`}>{study.built}</div>
                 </div>
                 <div className="w-full h-full flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700 relative z-0 pt-24 pb-8 px-4 mt-8 lg:mt-0">

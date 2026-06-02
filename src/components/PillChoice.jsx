@@ -36,12 +36,23 @@ export default function PillChoice() {
           <div className="font-mono text-xs uppercase tracking-[0.25em] text-[#666666]">
             The choice
           </div>
-          <h2 className="mt-3 font-serif text-4xl md:text-6xl lg:text-7xl leading-[1] tracking-tight">
-            Two pills. <span className="italic">One year from now.</span>
+          <h2 className="mt-4 font-serif text-[4.5rem] md:text-[6.5rem] lg:text-[8.5rem] leading-[0.95] tracking-tight">
+            Choose this. <span className="block md:inline italic text-[#15604E]">Or this.</span>
           </h2>
         </motion.div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="mt-14 relative">
+          {/* Visual "OR" Divider for Desktop */}
+          <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 bg-white rounded-full items-center justify-center shadow-2xl border border-[#DCDCCF]">
+            <span className="font-serif italic text-2xl text-[#1A1916]">or</span>
+          </div>
+          
+          {/* Visual "OR" Divider for Mobile */}
+          <div className="md:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-2xl border border-[#DCDCCF]">
+            <span className="font-serif italic text-xl text-[#1A1916]">or</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 relative z-10">
           {/* Blue Pill */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -65,19 +76,19 @@ export default function PillChoice() {
               alt="Frustrated professional"
               className="absolute inset-0 w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-[1500ms]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1A1916] via-[#1A1916]/60 to-[#1A1916]/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1A1916] via-[#1A1916]/80 to-transparent"></div>
             <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end text-[#FAF8F3]">
-              <div className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#FAF8F3]/70">
-                <span className="w-2 h-2 rounded-full bg-[#3a7bd5]"></span> Blue pill
+              <div className="inline-flex items-center gap-2 font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#FAF8F3] drop-shadow-md">
+                <span className="w-2 h-2 rounded-full bg-[#3a7bd5]"></span> Choose this
               </div>
-              <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
+              <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-[3.5rem] leading-[1.1] drop-shadow-lg">
                 Log back in tomorrow.
                 <br />
-                <span className="italic text-[#FAF8F3]/70">
+                <span className="italic text-[#FAF8F3]/90">
                   Continue the 14-hour grind.
                 </span>
               </h3>
-              <p className="mt-3 text-sm md:text-base text-[#FAF8F3]/70 max-w-md">
+              <p className="mt-4 text-base md:text-lg text-[#FAF8F3]/90 max-w-md drop-shadow-md">
                 Same loop. Same exhaustion. Same wondering if there was a better
                 way.
               </p>
@@ -105,22 +116,22 @@ export default function PillChoice() {
             <img
               src="https://images.unsplash.com/photo-1713947505775-4e3af92a4ee7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200"
               alt="Confident professional"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1500ms]"
+              className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-[1500ms]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#15604E]/80 via-[#15604E]/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#15604E]/90 via-[#15604E]/40 to-transparent"></div>
             <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end text-[#FAF8F3]">
-              <div className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em]">
-                <span className="w-2 h-2 rounded-full bg-[#FAF8F3] pulse-dot"></span>{" "}
-                Red pill
+              <div className="inline-flex items-center gap-2 font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#FAF8F3] drop-shadow-md">
+                <span className="w-2 h-2 rounded-full bg-[#e63946] pulse-dot"></span>{" "}
+                Or this
               </div>
-              <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
+              <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.1] drop-shadow-lg">
                 Step out of the mundane.
                 <br />
-                <span className="italic">
+                <span className="italic text-[#FAF8F3]/90">
                   Manage the technology before it manages you.
                 </span>
               </h3>
-              <p className="mt-3 text-sm md:text-base text-[#FAF8F3]/90 max-w-md">
+              <p className="mt-4 text-base md:text-lg text-[#FAF8F3] max-w-md drop-shadow-md">
                 Claim absolute authority over your career and time.
               </p>
               <a
@@ -132,6 +143,7 @@ export default function PillChoice() {
               </a>
             </div>
           </motion.div>
+          </div>
         </div>
 
         <motion.div

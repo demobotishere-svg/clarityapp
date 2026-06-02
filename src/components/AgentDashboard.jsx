@@ -146,7 +146,7 @@ export default function AgentDashboard() {
           <span className="w-3 h-3 rounded-full bg-[#FEBC2E]"></span>
           <span className="w-3 h-3 rounded-full bg-[#28C840]"></span>
         </div>
-        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#666666]">
+        <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.2em] text-[#666666]">
           ai-native.system / live
         </div>
         <div className="flex items-center gap-1.5">
@@ -158,13 +158,13 @@ export default function AgentDashboard() {
       <div className="p-6">
         <div className="flex items-center justify-between mb-5">
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#666666]">
+            <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.2em] text-[#666666]">
               My AI Agents
             </div>
             <div className="font-serif text-2xl mt-1">Active workflows</div>
           </div>
           <div className="text-right">
-            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#666666]">
+            <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.2em] text-[#666666]">
               live
             </div>
             <div className="flex items-center gap-1.5 mt-1">
@@ -257,7 +257,7 @@ export default function AgentDashboard() {
 
         <div className="mt-6 p-5 rounded-2xl bg-[#1A1916] text-[#FAF8F3] flex items-end justify-between overflow-hidden relative">
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#FAF8F3]/60">
+            <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#FAF8F3]/60">
               Saved this week
             </div>
             <div className="flex items-baseline gap-2 mt-1">
@@ -272,7 +272,7 @@ export default function AgentDashboard() {
             </div>
           </div>
           <div className="text-right text-[#FAF8F3]/80 text-sm">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#FAF8F3]/60">
+            <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#FAF8F3]/60">
               target
             </div>
             <div className="flex items-center gap-1.5 mt-1">
