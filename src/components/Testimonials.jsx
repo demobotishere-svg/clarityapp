@@ -366,7 +366,7 @@ export default function Testimonials() {
                 <img 
                   src={leader.image} 
                   alt="" 
-                  className="w-full h-full object-cover object-top grayscale mix-blend-lighten opacity-[0.95]"
+                  className="w-full h-full object-cover object-top opacity-100"
                 />
               </div>
 
