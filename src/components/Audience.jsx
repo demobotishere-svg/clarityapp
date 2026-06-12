@@ -146,7 +146,7 @@ export default function Audience() {
                 "You're good at what you do, but overwhelmed by the sheer volume of \"work about work.\"",
                 "You've felt AI is powerful, but struggle to move beyond generic ChatGPT answers.",
                 "You want the logic, not just a list of 50 prompt templates that expire next week.",
-                "You come from any field — marketing, HR, ops, finance — and want to apply AI to your specific domain."
+                "You come from any field — marketing, sales, tech, management, HR, ops, finance — and want to apply AI to your specific domain."
               ].map((item, idx) => (
                 <li key={idx} className="flex gap-4 items-start text-white/90 text-base md:text-lg leading-relaxed">
                   <span className="font-bold shrink-0 mt-0.5">✓</span>

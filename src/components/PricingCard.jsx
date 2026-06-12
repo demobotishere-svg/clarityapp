@@ -49,7 +49,7 @@ export default function PricingCard() {
       </a>
 
       <div className="flex items-center justify-center gap-1.5 text-xs md:text-sm text-[#666666] font-medium mt-3">
-        No payment today · full refund if you dont like it <Star className="w-3.5 h-3.5 text-[#F4A261] fill-[#F4A261]" />
+        No payment today · full refund if you dont like it<span className="text-[#F4A261] text-lg leading-none mt-1">*</span>
       </div>
     </motion.div>
   );

@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 const ease = [0.22, 1, 0.36, 1];
 
 const STATS = [
-  { k: "6+ yrs", v: "Building software" },
+  { k: "5000+", v: "Students trained" },
+  { k: "Since 2017", v: "AI Educator" },
   { k: "Production", v: "AI agents & RAG" },
   { k: "No upsell", v: "One course · one price" }
 ];
@@ -73,10 +74,10 @@ export default function About() {
                 on the internet.
               </p>
             </div>
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-[#DCDCCF] pt-8">
+            <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6 border-t border-[#DCDCCF] pt-8">
               {STATS.map((s) => (
                 <div key={s.k} data-testid="about-stat" className="border-l border-[#DCDCCF] pl-4">
-                  <div className="font-serif text-3xl italic font-light leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#15604E] via-[#F4A261] to-[#15604E]">{s.k}</div>
+                  <div className="font-serif text-xl md:text-2xl italic font-light leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#15604E] via-[#F4A261] to-[#15604E] w-fit pr-1">{s.k}</div>
                   <div className="font-mono text-sm md:text-base font-extrabold md:text-[11px] uppercase tracking-widest text-[#666666] mt-2.5 leading-snug">
                     {s.v}
                   </div>
